@@ -19,16 +19,20 @@ export function Contact() {
       aria-labelledby="contacto-title"
       className="px-margin-edge pb-section-gap pt-section-gap"
     >
-      {/* Título */}
+      {/* Título + subtítulo */}
       <div className="mb-section-gap w-full">
         <h2
           id="contacto-title"
           className="break-words border-b-2 border-primary pb-gutter text-left font-display-xl-mobile text-display-xl-mobile uppercase text-primary md:font-display-xl md:text-display-xl"
         >
-          Construyamos
+          ¿Tienes un proyecto
           <br />
-          algo.
+          en mente?
         </h2>
+        <p className="mt-8 max-w-2xl font-body-lg text-body-lg text-secondary">
+          Estoy disponible para posiciones full-time y proyectos freelance.
+          Hablemos.
+        </p>
       </div>
 
       {/* Grid: form 8 col · directos 4 col */}

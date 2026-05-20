@@ -110,13 +110,13 @@ export function ContactForm() {
           htmlFor={`${formId}-name`}
           className="mb-base font-meta-code text-meta-code uppercase text-meta-text"
         >
-          Nombre
+          Nombre completo
         </label>
         <input
           id={`${formId}-name`}
           type="text"
           autoComplete="name"
-          placeholder="Tu nombre completo"
+          placeholder="Tu nombre"
           aria-invalid={errors.name ? true : undefined}
           aria-describedby={errors.name ? `${formId}-name-err` : undefined}
           className={cn(inputBase, errors.name && inputError)}
@@ -236,7 +236,7 @@ export function ContactForm() {
       >
         {state === "success" && (
           <p className="border-2 border-primary bg-surface p-4 font-meta-code text-meta-code uppercase">
-            ✓ Mensaje enviado. Te respondo pronto.
+            ✓ ¡Mensaje enviado! Te respondo en menos de 24 horas.
             {mocked && (
               <span className="mt-2 block normal-case text-meta-text">
                 (Modo simulado: Resend no está configurado todavía. Mira la

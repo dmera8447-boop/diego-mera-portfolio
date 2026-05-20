@@ -35,41 +35,47 @@ interface Step {
   icon: LucideIcon;
 }
 
-// TODO: contenido final — descripciones reales por fase.
 const steps: Step[] = [
   {
     title: "Investigación",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Entrevistas, encuestas y análisis de comportamiento para entender al usuario real, no al usuario imaginado.",
     icon: Search,
   },
   {
     title: "User Journeys",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Mapeo del recorrido completo del usuario para identificar fricciones, oportunidades y momentos críticos.",
     icon: Route,
   },
   {
     title: "Benchmarking",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Análisis de soluciones líderes del mercado para encontrar patrones consolidados y oportunidades de diferenciación.",
     icon: Target,
   },
   {
     title: "Wireframes",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Exploración rápida de estructuras y flujos antes de invertir tiempo en el detalle visual.",
     icon: LayoutGrid,
   },
   {
     title: "Prototipos",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Alta fidelidad en Figma para validar interacciones, microinteracciones y decisiones de diseño con el equipo.",
     icon: MousePointerClick,
   },
   {
     title: "Pruebas de usabilidad",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Validación con usuarios reales en cada iteración. Un problema detectado aquí cuesta minutos; en producción, sprints.",
     icon: FlaskConical,
   },
   {
     title: "Design System",
-    description: "[Descripción breve — pendiente de definir]",
+    description:
+      "Construcción de la base de componentes, tokens y patrones que garantizan coherencia, accesibilidad y escalabilidad.",
     icon: Boxes,
   },
 ];
@@ -140,7 +146,6 @@ export function Process() {
                 <h3 className="mb-4 mt-12 font-headline-md text-headline-md uppercase leading-none">
                   {step.title}
                 </h3>
-                {/* TODO: contenido final — descripción real de la fase. */}
                 <p className="font-body-md text-body-md text-secondary">
                   {step.description}
                 </p>

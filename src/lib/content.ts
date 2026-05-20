@@ -14,17 +14,20 @@ const DIR = path.join(process.cwd(), "content", "case-studies");
 export interface CaseStudyMeta {
   /** Derivado del nombre de archivo → ruta /projects/[slug] */
   slug: string;
+  /** Título del caso (p.ej. "Dashboard interno de métricas") */
   title: string;
-  /** Rol de Diego (p.ej. "Lead UX/UI Designer") */
+  /** Empresa + sector (p.ej. "Shepwashi · Desarrollo de Software") */
+  company: string;
+  /** Descripción corta para la tarjeta y SEO meta */
+  description: string;
+  /** Rol de Diego (p.ej. "Lead UX/UI Designer") — solo página de detalle */
   role: string;
-  /** Duración del proyecto (p.ej. "8 semanas") */
+  /** Duración del proyecto — solo página de detalle */
   duration: string;
-  /** Equipo (p.ej. "Solo · 1 PM · 2 devs") */
+  /** Equipo — solo página de detalle */
   team: string;
   year: string;
-  /** Resumen corto para la tarjeta */
-  summary: string;
-  /** Tags técnicos (meta-code, separados por / o |) */
+  /** Tags técnicos (meta-code, separados por · o /) */
   tags: string[];
   /** Imagen de la tarjeta en /public/case-studies/[slug] */
   cover: string;

@@ -28,17 +28,17 @@ export async function generateMetadata({
   if (!study) return {};
   return {
     title: study.title,
-    description: study.summary,
+    description: study.description,
     openGraph: {
       title: study.title,
-      description: study.summary,
+      description: study.description,
       images: [{ url: study.hero }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title: study.title,
-      description: study.summary,
+      description: study.description,
       images: [study.hero],
     },
   };

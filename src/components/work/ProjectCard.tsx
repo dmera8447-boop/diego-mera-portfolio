@@ -24,9 +24,8 @@ const aspectMap: Record<NonNullable<ProjectCardProps["aspect"]>, string> = {
 };
 
 /**
- * Tarjeta de proyecto brutalista — réplica de Stitch Project Gallery.
- * El <article> es el item del grid; el <Link> envuelve todo para que la
- * tarjeta entera sea clickable y accesible por teclado.
+ * Tarjeta de proyecto brutalista — réplica de Stitch Project Gallery,
+ * extendida con empresa, descripción y tags.
  */
 export function ProjectCard({
   meta,
@@ -45,7 +44,7 @@ export function ProjectCard({
     <article className={cn("group relative flex flex-col", className)}>
       <Link
         href={`/projects/${meta.slug}`}
-        aria-label={`Ver caso de estudio: ${meta.title}`}
+        aria-label={`Ver caso de estudio: ${meta.title} — ${meta.company}`}
         className="block focus:outline-none"
       >
         <div
@@ -63,21 +62,51 @@ export function ProjectCard({
             className="object-cover opacity-80 mix-blend-multiply grayscale filter transition-none group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100"
           />
         </div>
-        <div className="mt-4 flex flex-col justify-between border-t border-accent-gray pt-4 md:flex-row md:items-end">
-          <h3
-            className={cn(
-              "uppercase text-primary",
-              headline,
-              "group-hover:underline group-hover:decoration-2 group-hover:underline-offset-8",
-            )}
-          >
-            {meta.title}
-          </h3>
-          <div className="mt-2 flex gap-2 font-meta-code text-meta-code uppercase text-meta-text md:mt-0">
-            <span>{meta.role}</span>
-            <span aria-hidden="true">/</span>
-            <span>{meta.year}</span>
+
+        <div className="mt-4 flex flex-col gap-3 border-t border-accent-gray pt-4">
+          {/* Title + Tags row */}
+          <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+            <h3
+              className={cn(
+                "uppercase text-primary",
+                headline,
+                "group-hover:underline group-hover:decoration-2 group-hover:underline-offset-8",
+              )}
+            >
+              {meta.title}
+            </h3>
+            <ul className="flex flex-shrink-0 flex-wrap gap-x-2 gap-y-1 md:max-w-[45%] md:justify-end">
+              {meta.tags.map((tag, i) => (
+                <li key={tag} className="flex items-center gap-2">
+                  <span className="font-meta-code text-meta-code uppercase text-meta-text">
+                    {tag}
+                  </span>
+                  {i < meta.tags.length - 1 && (
+                    <span
+                      aria-hidden="true"
+                      className="font-meta-code text-meta-code text-meta-text"
+                    >
+                      ·
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Company · Year */}
+          <p className="font-meta-code text-meta-code uppercase text-meta-text">
+            {meta.company}
+            <span aria-hidden="true" className="mx-2">
+              ·
+            </span>
+            {meta.year}
+          </p>
+
+          {/* Description */}
+          <p className="font-body-md text-body-md text-secondary">
+            {meta.description}
+          </p>
         </div>
       </Link>
     </article>
