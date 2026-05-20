@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* Tokens definidos en tailwind.config.ts (petición del brief).
+   Tailwind v4 los lee mediante la directiva @config. */
+@config "../../tailwind.config.ts";
+
+/* Las familias se inyectan vía CSS variables generadas por next/font
+   en <html> (self-hosted, sin Google Fonts CDN). */
+
+@layer base {
+  :root {
+    /* Altura del navbar sticky (py-base + headline-md + borde 2px) */
+    --nav-h: 4rem;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Las anclas (#work, #about…) no quedan tapadas por el navbar */
+    scroll-padding-top: var(--nav-h);
+  }
+
+  body {
+    background-color: theme(colors.background);
+    color: theme(colors.on-surface);
+    font-family: theme(fontFamily.inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Titulares: Anton, siempre en mayúsculas (lenguaje brutalista) */
+  h1,
+  h2,
+  h3 {
+    font-family: theme(fontFamily.anton);
+    text-transform: uppercase;
+  }
+
+  /* Selección de texto: inversión dura negro/blanco */
+  ::selection {
+    background-color: theme(colors.primary);
+    color: theme(colors.on-primary);
+  }
+
+  /* Accesibilidad WCAG AA: foco siempre visible, alto contraste */
+  :focus-visible {
+    outline: 2px solid theme(colors.primary);
+    outline-offset: 2px;
+  }
+
+  /* Respetar reduced-motion (Framer Motion quirúrgico) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Entrada quirúrgica: fade-in + slide-up sutil (CSS puro).
+     forwards mantiene el estado final; reduced-motion lo desactiva. */
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .animate-reveal {
+    animation: reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal {
+      animation: none;
+    }
+  }
+
+  /* Grid estructural visible: reglas verticales accent-gray.
+     12 columnas desktop, 4 columnas mobile (≤768px). */
+  .grid-bg {
+    background-image: linear-gradient(
+      to right,
+      theme(colors.accent-gray) 1px,
+      transparent 1px
+    );
+    background-size: calc(100% / 12) 100%;
+  }
+
+  @media (max-width: 768px) {
+    .grid-bg {
+      background-size: calc(100% / 4) 100%;
+    }
+  }
+}
