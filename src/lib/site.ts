@@ -6,8 +6,9 @@ export const siteConfig = {
   name: "Diego Mera",
   fullName: "Diego Andrés Mera Rojas",
   role: "Diseñador UX/UI",
-  // TODO: ajustar al dominio final antes del deploy (FASE 4)
-  url: "https://diegomera.vercel.app",
+  // Dominio actual de Vercel. Cuando configures un dominio custom
+  // (p.ej. diegomera.com), reemplaza este valor y haz push.
+  url: "https://diego-mera-portfolio.vercel.app",
   description:
     "Diseñador UX/UI con 2+ años de experiencia en dashboards B2B, productos SaaS y Design Systems. Arquitectura de experiencias digitales con lógica estructural y precisión.",
   location: "Samborondón, Guayas, Ecuador",
