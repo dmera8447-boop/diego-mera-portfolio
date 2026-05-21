@@ -99,7 +99,7 @@ export function LottieCover({
       ref={containerRef}
       className={cn("absolute inset-0 h-full w-full", className)}
     >
-      {/* PNG estático: visible siempre como fondo y como reduced-motion fallback */}
+      {/* PNG estático: visible como reduced-motion fallback y mientras carga el Lottie */}
       <Image
         src={fallback}
         alt={alt}
@@ -107,21 +107,16 @@ export function LottieCover({
         sizes={sizes}
         priority={priority}
         className={cn(
-          "absolute inset-0 h-full w-full object-cover opacity-80 mix-blend-multiply grayscale filter transition-opacity duration-0",
-          "group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100",
-          showLottie && "opacity-0 group-hover:opacity-0 group-focus-visible:opacity-0",
+          "absolute inset-0 h-full w-full object-cover transition-opacity duration-0",
+          showLottie && "opacity-0",
         )}
       />
 
-      {/* Lottie animado: tratamiento brutalist (grayscale por defecto, color en hover) */}
+      {/* Lottie animado: a color, contenido completo (meet → no crop), con respiro interno */}
       {showLottie && (
         <div
           aria-hidden="true"
-          className={cn(
-            "absolute inset-0 h-full w-full transition-none",
-            "[filter:grayscale(1)_opacity(0.85)]",
-            "group-hover:[filter:none] group-focus-visible:[filter:none]",
-          )}
+          className="absolute inset-0 h-full w-full p-4 md:p-6"
         >
           <Lottie
             lottieRef={lottieRef}
@@ -129,7 +124,7 @@ export function LottieCover({
             loop
             autoplay
             className="h-full w-full"
-            rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+            rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
           />
         </div>
       )}
