@@ -33,6 +33,8 @@ export interface CaseStudyMeta {
   cover: string;
   /** Imagen hero de la página de detalle */
   hero: string;
+  /** Lottie JSON opcional para la tarjeta (loop 4s, lazy-loaded) */
+  lottie?: string;
   liveUrl?: string;
   /** Orden de aparición (menor primero) */
   order: number;

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { CaseStudyMeta } from "@/lib/content";
+import { LottieCover } from "@/components/work/LottieCover";
 
 interface ProjectCardProps {
   meta: CaseStudyMeta;
@@ -53,14 +54,23 @@ export function ProjectCard({
             aspectMap[aspect],
           )}
         >
-          <Image
-            src={meta.cover}
-            alt=""
-            fill
-            sizes={sizes}
-            priority={priority}
-            className="object-cover opacity-80 mix-blend-multiply grayscale filter transition-none group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100"
-          />
+          {meta.lottie ? (
+            <LottieCover
+              src={meta.lottie}
+              fallback={meta.cover}
+              sizes={sizes}
+              priority={priority}
+            />
+          ) : (
+            <Image
+              src={meta.cover}
+              alt=""
+              fill
+              sizes={sizes}
+              priority={priority}
+              className="object-cover opacity-80 mix-blend-multiply grayscale filter transition-none group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100"
+            />
+          )}
         </div>
 
         <div className="mt-4 flex flex-col gap-3 border-t border-accent-gray pt-4">
