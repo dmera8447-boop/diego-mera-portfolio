@@ -12,7 +12,7 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="grid grid-cols-4 gap-gutter px-margin-edge pb-section-gap pt-section-gap md:grid-cols-12"
     >
-      <Reveal className="col-span-4 md:col-span-10 md:col-start-2">
+      <Reveal immediate className="col-span-4 md:col-span-10 md:col-start-2">
         <h1
           id="hero-title"
           className="break-words text-right font-display-xl-mobile text-display-xl-mobile uppercase text-primary md:font-display-xl md:text-display-xl"
@@ -24,7 +24,8 @@ export function Hero() {
       </Reveal>
 
       <Reveal
-        delay={0.1}
+        immediate
+        delay={0.15}
         className="col-span-4 mt-12 text-right md:col-span-5 md:col-start-8"
       >
         <p className="font-meta-code text-meta-code uppercase text-meta-text">

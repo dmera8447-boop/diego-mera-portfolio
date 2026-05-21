@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/sections/ContactForm";
+import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/site";
 
 /**
@@ -20,7 +21,7 @@ export function Contact() {
       className="px-margin-edge pb-section-gap pt-section-gap"
     >
       {/* Título + subtítulo */}
-      <div className="mb-section-gap w-full">
+      <Reveal className="mb-section-gap w-full">
         <h2
           id="contacto-title"
           className="break-words border-b-2 border-primary pb-gutter text-left font-display-xl-mobile text-display-xl-mobile uppercase text-primary md:font-display-xl md:text-display-xl"
@@ -33,17 +34,20 @@ export function Contact() {
           Estoy disponible para posiciones full-time y proyectos freelance.
           Hablemos.
         </p>
-      </div>
+      </Reveal>
 
       {/* Grid: form 8 col · directos 4 col */}
       <div className="relative grid grid-cols-1 gap-0 border-y border-accent-gray md:grid-cols-12">
         {/* Formulario */}
-        <div className="relative z-10 col-span-1 border-b border-accent-gray pb-margin-edge md:col-span-8 md:border-b-0 md:border-r md:pb-0 md:pr-margin-edge">
+        <Reveal className="relative z-10 col-span-1 border-b border-accent-gray pb-margin-edge md:col-span-8 md:border-b-0 md:border-r md:pb-0 md:pr-margin-edge">
           <ContactForm />
-        </div>
+        </Reveal>
 
         {/* Detalles directos */}
-        <div className="relative z-10 col-span-1 pt-margin-edge md:col-span-4 md:pl-margin-edge md:pt-margin-edge">
+        <Reveal
+          delay={0.1}
+          className="relative z-10 col-span-1 pt-margin-edge md:col-span-4 md:pl-margin-edge md:pt-margin-edge"
+        >
           <div className="flex h-full flex-col">
             <h3 className="mb-base inline-block border-b border-accent-gray pb-1 self-start font-meta-code text-meta-code uppercase text-meta-text">
               {"// DIRECTO"}
@@ -73,7 +77,7 @@ export function Contact() {
               {siteConfig.location}
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
