@@ -50,7 +50,7 @@ export function ProjectCard({
       >
         <div
           className={cn(
-            "relative overflow-hidden border-2 border-primary bg-surface-container-high",
+            "relative overflow-hidden border-2 border-primary bg-surface-container-lowest",
             aspectMap[aspect],
           )}
         >
