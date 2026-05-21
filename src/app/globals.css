@@ -61,28 +61,53 @@
   }
 }
 
-@layer utilities {
-  /* Entrada quirúrgica: fade-in + slide-up sutil (CSS puro).
-     forwards mantiene el estado final; reduced-motion lo desactiva. */
-  @keyframes reveal {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
+@layer components {
+  /* Preloader: pantalla blanca con logo que se oculta sola en ~1.3s. */
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: theme(colors.background);
+    animation: preloader-out 500ms cubic-bezier(0.22, 1, 0.36, 1) 800ms
+      forwards;
+  }
+  .preloader__logo {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: preloader-logo-in 350ms cubic-bezier(0.22, 1, 0.36, 1) 80ms
+      forwards;
+  }
+  @keyframes preloader-logo-in {
     to {
       opacity: 1;
       transform: none;
     }
   }
-  .animate-reveal {
-    animation: reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .animate-reveal {
-      animation: none;
+  @keyframes preloader-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .preloader {
+      animation: none;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .preloader__logo {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
 
+@layer utilities {
   /* Grid estructural visible: reglas verticales accent-gray.
      12 columnas desktop, 4 columnas mobile (≤768px). */
   .grid-bg {

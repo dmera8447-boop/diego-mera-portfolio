@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GridOverlay } from "@/components/layout/GridOverlay";
+import { Preloader } from "@/components/layout/Preloader";
 import "./globals.css";
 
 // Titulares brutalistas — Anton (un solo peso)
@@ -79,6 +80,7 @@ export default function RootLayout({
       className={`${anton.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="grid-bg relative flex min-h-full flex-col bg-background text-on-surface antialiased">
+        <Preloader />
         {/* JSON-LD Person — perfil estructurado para Google Knowledge Graph */}
         <script
           type="application/ld+json"
