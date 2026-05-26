@@ -61,6 +61,16 @@
   }
 }
 
+@layer base {
+  /* Cursor custom activo (solo desktop con mouse): oculta el cursor nativo
+     en TODO. !important para sobrescribir cualquier cursor: pointer en
+     links/buttons/inputs. */
+  body.cursor-active,
+  body.cursor-active * {
+    cursor: none !important;
+  }
+}
+
 @layer components {
   /* Preloader: pantalla blanca con logo que se oculta sola en ~1.3s. */
   .preloader {

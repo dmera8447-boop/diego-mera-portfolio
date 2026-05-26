@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GridOverlay } from "@/components/layout/GridOverlay";
 import { Preloader } from "@/components/layout/Preloader";
+import { Cursor } from "@/components/ui/Cursor";
 import "./globals.css";
 
 // Titulares brutalistas — Anton (un solo peso)
@@ -81,6 +82,7 @@ export default function RootLayout({
     >
       <body className="grid-bg relative flex min-h-full flex-col bg-background text-on-surface antialiased">
         <Preloader />
+        <Cursor />
         {/* JSON-LD Person — perfil estructurado para Google Knowledge Graph */}
         <script
           type="application/ld+json"
