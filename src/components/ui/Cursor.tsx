@@ -101,17 +101,28 @@ export function Cursor() {
       className="pointer-events-none fixed left-0 top-0 z-[100] opacity-0 mix-blend-difference"
       style={{ willChange: "transform, opacity" }}
     >
+      {/* Anillo circular — borderRadius inline para sobrescribir
+          el rounded-full: 0 que impone tailwind.config.ts (brutalismo). */}
       <div
-        className="-translate-x-1/2 -translate-y-1/2 rounded-full border border-white transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        className="relative transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
           width: "32px",
           height: "32px",
+          borderRadius: "9999px",
+          border: "1px solid #ffffff",
           transform: `translate(-50%, -50%) scale(${hovering ? 1.6 : 1})`,
         }}
       >
+        {/* Punto central — también circular */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
-          style={{ width: "3px", height: "3px" }}
+          className="absolute left-1/2 top-1/2"
+          style={{
+            width: "3px",
+            height: "3px",
+            borderRadius: "9999px",
+            backgroundColor: "#ffffff",
+            transform: "translate(-50%, -50%)",
+          }}
         />
       </div>
     </div>
