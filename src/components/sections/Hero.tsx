@@ -7,8 +7,12 @@ import { TextRotate } from "@/components/ui/TextRotate";
 
 /**
  * HERO — réplica del Portfolio Home de Stitch.
- * H1 con un hook rotador (Diseño productos que [VENDEN/ESCALAN/…]).
- * El verbo aparece dentro de un recuadro negro y rota cada 2.5s.
+ *
+ *  · Mobile: todo centrado (sin espacio muerto), titular en ~36px para
+ *    que palabras largas del rotador (CONVIERTEN.) quepan dentro del
+ *    contenedor con el padding margin-edge.
+ *  · Desktop: composición brutalista asimétrica original (display-xl
+ *    120px, alineado a la derecha, asimétrico col-start-2 / col-start-8).
  */
 export function Hero() {
   return (
@@ -19,18 +23,30 @@ export function Hero() {
       <Reveal immediate className="col-span-4 md:col-span-10 md:col-start-2">
         <h1
           id="hero-title"
-          className="text-right font-display-xl-mobile text-display-xl-mobile uppercase leading-[1.1] text-primary md:font-display-xl md:text-display-xl"
+          className="text-center font-display-xl-mobile uppercase leading-[1.1] tracking-[-0.02em] text-primary text-[2.25rem] sm:text-[3rem] md:text-right md:font-display-xl md:text-display-xl"
         >
           <LayoutGroup>
             <motion.span
-              className="inline-flex flex-wrap items-baseline justify-end gap-x-[0.25em] whitespace-pre"
+              className="inline-flex flex-wrap items-baseline justify-center gap-x-[0.25em] md:justify-end"
               layout
             >
               <motion.span
                 layout
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
               >
-                Diseño productos que
+                Diseño
+              </motion.span>
+              <motion.span
+                layout
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              >
+                productos
+              </motion.span>
+              <motion.span
+                layout
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              >
+                que
               </motion.span>
               {/* TODO: edita los verbos según el ángulo que quieras dar al hook */}
               <TextRotate
@@ -41,7 +57,7 @@ export function Hero() {
                   "conectan.",
                   "venden.",
                 ]}
-                mainClassName="bg-primary text-on-primary inline-flex justify-center overflow-hidden px-4 md:px-8 py-0 md:py-1"
+                mainClassName="bg-primary text-on-primary inline-flex justify-center overflow-hidden px-2 sm:px-4 md:px-8 py-0 md:py-1"
                 staggerFrom="last"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -59,7 +75,7 @@ export function Hero() {
       <Reveal
         immediate
         delay={0.15}
-        className="col-span-4 mt-12 text-right md:col-span-5 md:col-start-8"
+        className="col-span-4 mt-12 text-center md:col-span-5 md:col-start-8 md:text-right"
       >
         <p className="font-meta-code text-meta-code uppercase text-meta-text">
           {"// DISEÑADOR UX/UI"}
@@ -75,8 +91,8 @@ export function Hero() {
           soluciones que funcionan de verdad.
         </p>
 
-        <div className="mt-8 flex flex-col items-end gap-3">
-          <div className="flex flex-wrap justify-end gap-3">
+        <div className="mt-8 flex flex-col items-center gap-3 md:items-end">
+          <div className="flex flex-wrap justify-center gap-3 md:justify-end">
             <Link
               href="/#contacto"
               className="inline-block border-2 border-primary bg-primary px-6 py-3 font-meta-code text-meta-code uppercase text-on-primary transition-none hover:bg-surface hover:text-primary"
