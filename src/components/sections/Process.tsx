@@ -12,21 +12,14 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  CardCurtainReveal,
-  CardCurtainRevealBody,
-  CardCurtainRevealDescription,
-} from "@/components/ui/CardCurtainReveal";
 
 /**
  * PROCESO DE DISEÑO — 7 fases en grid 3-col (mobile: 1-col).
- * Estado por defecto: solo el nombre de la fase centrado.
- * Hover (desktop): cortina negra desde el centro revela el detalle
- * completo (icono + fase_NN + título + descripción).
- * Touch/mobile: la cortina queda siempre abierta (sin posibilidad de hover).
+ * Cada celda: icono + FASE_NN arriba, título + descripción al pie.
+ * Última fase (Design System) span las 3 columnas como "monumento" final.
  *
  * Stagger fade-in al entrar al viewport (Framer Motion), respeta
- * prefers-reduced-motion.
+ * prefers-reduced-motion. Semántica <ol>/<li> — proceso ordenado.
  */
 
 interface Step {
@@ -125,55 +118,31 @@ export function Process() {
           const Icon = step.icon;
           const isLast = i === lastIdx;
           const isRightCol = i % 3 === 2;
-          const faseLabel = `FASE_${String(i + 1).padStart(2, "0")}`;
-
           return (
             <motion.li
               key={step.title}
               variants={reduce ? undefined : itemVariants}
               className={cn(
-                "min-h-[400px]",
+                "flex min-h-[400px] flex-col p-margin-edge",
                 !isLast && "border-b border-accent-gray",
                 !isLast && !isRightCol && "md:border-r md:border-accent-gray",
                 isLast && "md:col-span-3",
               )}
             >
-              <CardCurtainReveal className="h-full" data-cursor-hover>
-                <CardCurtainRevealBody className="relative flex h-full items-center justify-center p-margin-edge text-center">
-                  {/* Estado por defecto: solo el nombre de la fase, centrado.
-                      aria-hidden porque el h3 semántico vive en la cortina
-                      (siempre presente en el DOM, lo leen los screen readers). */}
-                  <span
-                    aria-hidden="true"
-                    className="block break-words font-headline-lg text-headline-lg uppercase leading-none text-primary"
-                  >
-                    {step.title}
-                  </span>
-
-                  {/* Cortina: cubre toda la cell con el detalle al hacer hover */}
-                  <CardCurtainRevealDescription className="absolute inset-0 flex flex-col justify-between bg-primary p-margin-edge text-left text-on-primary">
-                    <div className="flex items-center justify-between">
-                      <Icon
-                        size={32}
-                        strokeWidth={1.5}
-                        aria-hidden="true"
-                        className="text-on-primary"
-                      />
-                      <span className="font-meta-code text-meta-code uppercase text-on-primary-container">
-                        {faseLabel}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="mb-4 font-headline-md text-headline-md uppercase leading-none text-on-primary">
-                        {step.title}
-                      </h3>
-                      <p className="font-body-md text-body-md text-on-primary-container">
-                        {step.description}
-                      </p>
-                    </div>
-                  </CardCurtainRevealDescription>
-                </CardCurtainRevealBody>
-              </CardCurtainReveal>
+              <div className="flex items-center justify-between">
+                <Icon aria-hidden="true" size={32} strokeWidth={1.5} />
+                <span className="font-meta-code text-meta-code uppercase text-meta-text">
+                  {`FASE_${String(i + 1).padStart(2, "0")}`}
+                </span>
+              </div>
+              <div className="mt-auto">
+                <h3 className="mb-4 mt-12 font-headline-md text-headline-md uppercase leading-none">
+                  {step.title}
+                </h3>
+                <p className="font-body-md text-body-md text-secondary">
+                  {step.description}
+                </p>
+              </div>
             </motion.li>
           );
         })}
