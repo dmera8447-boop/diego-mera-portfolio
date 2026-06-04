@@ -118,6 +118,39 @@
 }
 
 @layer utilities {
+  /* Marquee infinito — translate de 0 a -100% del width del primer track.
+     Renderizando 2 copias del contenido, el loop es visualmente continuo. */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  .animate-marquee {
+    animation: marquee linear infinite;
+    will-change: transform;
+  }
+  .animate-marquee-reverse {
+    animation: marquee-reverse linear infinite;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-marquee-reverse {
+      animation: none;
+    }
+  }
+
   /* Grid estructural visible: reglas verticales accent-gray.
      12 columnas desktop, 4 columnas mobile (≤768px). */
   .grid-bg {
