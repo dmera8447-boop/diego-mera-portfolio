@@ -41,7 +41,7 @@ export function InfiniteMarquee({
     >
       <div
         className={cn(
-          "flex shrink-0 items-center gap-12 pr-12 md:gap-16 md:pr-16",
+          "flex shrink-0 items-center gap-6 pr-6 md:gap-10 md:pr-10",
           animationClass,
           pauseOnHover && "group-hover:[animation-play-state:paused]",
         )}
@@ -52,7 +52,7 @@ export function InfiniteMarquee({
       <div
         aria-hidden="true"
         className={cn(
-          "flex shrink-0 items-center gap-12 pr-12 md:gap-16 md:pr-16",
+          "flex shrink-0 items-center gap-6 pr-6 md:gap-10 md:pr-10",
           animationClass,
           pauseOnHover && "group-hover:[animation-play-state:paused]",
         )}
