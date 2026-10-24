@@ -5,6 +5,13 @@ import { rateLimit } from "@/lib/rate-limit";
 /** Valor placeholder del .env.local — se trata como "no configurado". */
 const PLACEHOLDER_KEY = "aquí_va_mi_api_key";
 
+/** Cómo llega el tipo de consulta en el asunto del email. */
+const KIND_LABELS = {
+  job: "Puesto full-time",
+  freelance: "Proyecto freelance",
+  other: "Otro",
+} as const;
+
 export const runtime = "nodejs";
 
 function clientIp(req: NextRequest): string {
@@ -66,7 +73,8 @@ export async function POST(req: NextRequest) {
     console.log("[CONTACT][MOCK] Resend no configurado. Mensaje recibido:", {
       name: data.name,
       email: data.email,
-      subject: data.subject,
+      kind: data.kind,
+      company: data.company,
       message: data.message.slice(0, 200),
     });
     return NextResponse.json({ ok: true, mocked: true });
@@ -82,11 +90,12 @@ export async function POST(req: NextRequest) {
       from: "Portafolio <onboarding@resend.dev>",
       to: [to!],
       replyTo: data.email,
-      subject: `[Portafolio] ${data.subject}`,
+      subject: `[Portafolio] ${KIND_LABELS[data.kind]} — ${data.name}`,
       text:
         `De: ${data.name} <${data.email}>\n` +
-        `Asunto: ${data.subject}\n\n` +
-        `${data.message}`,
+        `Busca: ${KIND_LABELS[data.kind]}\n` +
+        (data.company ? `Empresa: ${data.company}\n` : "") +
+        `\n${data.message}`,
     });
 
     if (error) {

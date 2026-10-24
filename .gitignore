@@ -48,3 +48,6 @@ next-env.d.ts
 
 # editor / agent state
 .claude/
+
+# Capturas del inspector de diseño (local)
+.taste-skill/

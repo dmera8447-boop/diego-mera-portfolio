@@ -1,40 +1,36 @@
 /**
- * Configuración global del sitio.
- * Datos reales de Diego (reemplazan el contenido placeholder de Stitch).
+ * Datos globales del sitio (independientes del idioma).
+ * Los textos traducibles viven en src/i18n/dictionaries.ts.
  */
 export const siteConfig = {
   name: "Diego Mera",
   fullName: "Diego Andrés Mera Rojas",
-  role: "Diseñador UX/UI",
   // Dominio actual de Vercel. Cuando configures un dominio custom
   // (p.ej. diegomera.com), reemplaza este valor y haz push.
   url: "https://diego-mera-portfolio.vercel.app",
-  description:
-    "Diseñador UX/UI con 2+ años de experiencia en dashboards B2B, productos SaaS y Design Systems. Arquitectura de experiencias digitales con lógica estructural y precisión.",
-  location: "Samborondón, Guayas, Ecuador",
+  location: "Samborondón, Ecuador",
+  timeZone: "America/Guayaquil",
   email: "diego.mera2002@hotmail.com",
-  experienceYears: "2+",
+  phoneDisplay: "+593 99 335 7160",
+  whatsapp: "593993357160",
+  linkedin: "https://linkedin.com/in/diegomerarojas",
+  linkedinDisplay: "linkedin.com/in/diegomerarojas",
+  /**
+   * Link de agenda (Cal.com o Calendly). Vacío = el planificador de
+   * /contact arma un mensaje de WhatsApp con el día y la hora elegidos.
+   */
+  bookingUrl: "",
 } as const;
 
-/** Navegación principal (anclas de scroll, según el diseño de Stitch). */
-export const navLinks = [
-  { label: "PROYECTOS", href: "/#proyectos" },
-  { label: "PROCESO", href: "/#proceso" },
-  { label: "SOBRE MÍ", href: "/#sobre-mi" },
-  { label: "CONTACTO", href: "/#contacto" },
-] as const;
+export function whatsappHref(text?: string): string {
+  const base = `https://wa.me/${siteConfig.whatsapp}`;
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+}
 
-/** Redes (reemplazan DRIBBBLE/READCV/GITHUB ficticios de Stitch). */
-export const socialLinks = [
-  {
-    label: "LINKEDIN",
-    href: "https://linkedin.com/in/diegomerarojas",
-  },
-  {
-    label: "EMAIL",
-    href: `mailto:${siteConfig.email}`,
-  },
-] as const;
-
-export type NavLink = (typeof navLinks)[number];
-export type SocialLink = (typeof socialLinks)[number];
+export function mailtoHref(subject?: string, body?: string): string {
+  const params = new URLSearchParams();
+  if (subject) params.set("subject", subject);
+  if (body) params.set("body", body);
+  const qs = params.toString().replace(/\+/g, "%20");
+  return `mailto:${siteConfig.email}${qs ? `?${qs}` : ""}`;
+}

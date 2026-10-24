@@ -3,37 +3,30 @@ import { z } from "zod";
 /**
  * Schema del formulario de contacto.
  * Usado por react-hook-form (cliente) y la API route (servidor) → fuente única.
+ * Los mensajes de error son códigos; el cliente los traduce con el diccionario.
  *
  * El campo `website` es un honeypot: invisible para humanos, atractivo para bots.
  * Si llega con valor, lo tratamos como spam y silenciosamente devolvemos OK.
  */
+export const contactKinds = ["job", "freelance", "other"] as const;
+export type ContactKind = (typeof contactKinds)[number];
+
 export const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(2, "Nombre demasiado corto.")
-    .max(80, "Máximo 80 caracteres."),
-  email: z
-    .string()
-    .trim()
-    .email("Introduce un email válido.")
-    .max(160, "Máximo 160 caracteres."),
-  subject: z
-    .string()
-    .trim()
-    .min(2, "Asunto demasiado corto.")
-    .max(120, "Máximo 120 caracteres."),
-  message: z
-    .string()
-    .trim()
-    .min(10, "Cuéntame un poco más (mínimo 10 caracteres).")
-    .max(2000, "Máximo 2000 caracteres."),
-  /**
-   * Honeypot — debe quedar vacío.
-   * El schema lo deja pasar como string libre; el servidor inspecciona
-   * el valor y devuelve 200 silencioso si vino con contenido (bot).
-   */
+  kind: z.enum(contactKinds),
+  name: z.string().trim().min(2, "name_short").max(80, "name_long"),
+  email: z.string().trim().email("email_invalid").max(160, "email_long"),
+  company: z.string().trim().max(120, "company_long").optional(),
+  message: z.string().trim().min(10, "message_short").max(2000, "message_long"),
+  /** Honeypot — debe quedar vacío. */
   website: z.string().optional(),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;
+export type ContactErrorCode =
+  | "name_short"
+  | "name_long"
+  | "email_invalid"
+  | "email_long"
+  | "company_long"
+  | "message_short"
+  | "message_long";

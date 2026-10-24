@@ -6,320 +6,193 @@ Contexto del proyecto para sesiones de Claude Code. Léelo antes de hacer cualqu
 
 ## Identidad
 
-- **Owner**: Diego Andrés Mera Rojas — Diseñador UX/UI · 2+ años
-- **Ubicación**: Samborondón, Guayas, Ecuador
-- **Email**: diego.mera2002@hotmail.com
+- **Owner**: Diego Andrés Mera Rojas — Diseñador UX/UI en Shepwashi
+- **Ubicación**: Samborondón, Guayas, Ecuador (GMT−5)
+- **Email**: diego.mera2002@hotmail.com · **WhatsApp**: +593 99 335 7160
 - **LinkedIn**: linkedin.com/in/diegomerarojas
-- **Especialidad**: dashboards B2B, productos SaaS, Design Systems
-- **Diseño fuente de verdad**: Stitch (Google) — proyecto "Minimalist Brutalist UX Portfolio" (ID `1944364421998808726`), design system **"Structural Monolith"** (Brutalismo + Minimalismo)
+- **Especialidad**: dashboards B2B, productos SaaS, sitios corporativos, design systems
+- **Diseño fuente de verdad**: Figma `Diego Mera Portfolio` (file key `yulmuyDDjurUaAL63MdD27`), página **"Propuesta A — Nombre gigante"** (Home, Caso de estudio, Sobre mí, Contacto en desktop 1440 y mobile 393). La página "Brief y estrategia" tiene público, conversión y pendientes.
+
+## Objetivo del sitio
+
+Convertir visitas en conversaciones. Público principal: empresas de software B2B/SaaS que contratan (full-time); secundario: clientes freelance. Conversión principal: **agendar una llamada de 30 min**; secundarias: WhatsApp y email. Sin descarga de CV.
 
 ## Live
 
 - **Producción**: https://diego-mera-portfolio.vercel.app
-- **Repo**: https://github.com/dmera8447-boop/diego-mera-portfolio (público, branch `main`)
-- **Hosting**: Vercel (auto-deploy en cada `git push origin main`)
-- **Email transaccional**: Resend (form de contacto)
+- **Repo**: https://github.com/dmera8447-boop/diego-mera-portfolio (branch `main`)
+- **Hosting**: Vercel (auto-deploy en cada `git push origin main`; las otras ramas generan previews)
+- **Email transaccional**: Resend (formulario de contacto)
 
 ---
 
-## Stack (NO NEGOCIABLE — viene del brief original)
+## Stack
 
 | Capa | Tecnología | Versión |
 |---|---|---|
-| Framework | Next.js | **15.5.18** (NO 16+ — el brief lo fijó en 15) |
+| Framework | Next.js (App Router) | **15.5.x** (NO 16+) |
 | Lenguaje | TypeScript strict | 5.x |
-| Estilos | Tailwind CSS v4 | con tokens en `tailwind.config.ts` enlazado por `@config` |
-| Animaciones | Framer Motion | 11.18.2 |
-| Iconos | lucide-react | 0.469.0 |
-| Fuentes | next/font | self-hosted (NO Google Fonts CDN) |
-| Imágenes | next/image | avif/webp |
-| Hosting | Vercel | con `pnpm install` + `next build` |
-| Gestor | pnpm | 11.x (via corepack) |
+| Estilos | Tailwind CSS v4 | tokens en `tailwind.config.ts` enlazado por `@config` |
+| Contenido | MDX + gray-matter + next-mdx-remote (≥ 6.0.0) | |
+| Formularios | react-hook-form + zod | |
+| Animación de casos | lottie-react (lazy) | |
+| Fuentes | next/font (Host Grotesk, self-hosted) | |
+| Hosting | Vercel | `pnpm install` + `next build` |
 
-### Dependencias completas
-
-**deps**: `clsx`, `framer-motion`, `gray-matter`, `lottie-react`, `lucide-react`, `next`, `next-mdx-remote` (≥ **6.0.0** — la 5.x es bloqueada por Vercel security gate), `react`, `react-dom`, `tailwind-merge`, `zod`, `@hookform/resolvers`, `react-hook-form`, `resend`
-
-**devDeps**: `@eslint/eslintrc`, `@tailwindcss/postcss`, `eslint`, `eslint-config-next` (15.x — emparejada con Next 15), `eslint-config-prettier`, `prettier`, `prettier-plugin-tailwindcss`, `sharp`, `tailwindcss`, `typescript`
+`framer-motion` y `lucide-react` siguen instalados pero el rediseño no los usa (el movimiento es CSS + IntersectionObserver).
 
 ---
 
-## Design System — "Structural Monolith"
+## Design System — "Propuesta A · Nombre gigante"
 
-### Colores (en `tailwind.config.ts`)
+Blanco y negro, una sola familia, un acento naranja reservado para la acción principal. Reglas de la skill `design-taste-frontend`: sin eyebrows, sin monospace, sin numeración 01/02, sin líneas divisorias, sin gradientes, sin sombras en reposo, titulares de máximo dos líneas.
+
+### Colores (`tailwind.config.ts`)
 
 | Token | Hex | Uso |
 |---|---|---|
-| `primary` / `border-dark` | `#000000` | Tinta, bordes 2px |
-| `on-primary` | `#ffffff` | Texto sobre negro |
-| `background` / `surface` | `#f9f9f9` | Canvas |
-| `surface-container-lowest` | `#ffffff` | Cards |
-| `surface-container-high` | `#e8e8e8` | NO usar como fondo de cards de proyecto — los Lotties son blancos, queda marco gris visible. Usar `surface-container-lowest` |
-| `on-surface` / `on-background` | `#1a1c1c` | Texto principal |
-| `secondary` | `#5d5f5f` | Texto secundario |
-| `accent-gray` | `#e0e0e0` | Líneas de grid 1px |
-| `meta-text` | `#666666` | Metadatos / footer |
-| `error` | `#ba1a1a` | Validación de formularios |
+| `bg` | `#ffffff` | Fondo |
+| `ink` | `#0b0b0b` | Texto, footer, botón secundario |
+| `ink-2` | `#3a3a38` | Segunda etapa del proceso, hover de botón tinta |
+| `soft` | `#6b6b68` | Texto secundario (5.3:1) |
+| `faint` | `#b4b4b0` | Solo elementos deshabilitados/decorativos, nunca texto de lectura |
+| `tone` / `tone-2` | `#f1f1ef` / `#e4e4e1` | Superficies (se separa por tono, no con bordes) |
+| `accent` | `#ff4d00` | **Solo** la acción de agendar (texto en `ink` encima, 6.5:1) |
+| `on-ink` / `on-ink-soft` | `#ffffff` / `#a9a9a5` | Texto sobre tinta |
+| `error` | `#b3261e` | Validación |
 
-### Tipografía
+### Tipografía (Host Grotesk 400/500, clases en `globals.css`)
 
-| Estilo | Familia | Tamaño | Notas |
-|---|---|---|---|
-| `display-xl` | Anton | 120px / 110% / -0.04em | h1 desktop |
-| `display-xl-mobile` | Anton | 64px / 110% / -0.02em | Token. En el Hero está OVERRIDED a 44px (sm: 56px) por overflow |
-| `headline-lg` | Anton | 48px / 120% | Section headings |
-| `headline-md` | Anton | 32px / 120% | Card titles |
-| `body-lg` | Inter | 20px / 160% | Párrafos importantes |
-| `body-md` | Inter | 16px / 160% | Body genérico |
-| `meta-code` | JetBrains Mono | 12px / 140% / 0.05em | Labels técnicos (`// 01_PERFIL`, `FASE_01`, eyebrows) |
+| Clase | Tamaño | Uso |
+|---|---|---|
+| `.type-name` | 20.66% del ancho del contenedor `.name-fit` | El nombre a todo el ancho (hero y footer) |
+| `.type-h1` | clamp(48px, 8.4vw, 120px) | h1 de páginas internas |
+| `.type-h2` | clamp(40px, 4.45vw, 64px) | Títulos de sección |
+| `.type-lead` | clamp(24px, 2.2vw, 32px) | Enunciados, nombres de casos |
+| `.type-title` | 24px | Subtítulos |
+| body | 16px / 1.6 | Texto corrido |
 
-**Convenciones**: Anton siempre `uppercase`. Inter para cuerpo. Mono para metadatos. Las 3 fuentes se cargan vía `next/font/google` (self-hosted automáticamente).
+### Espaciado y forma
 
-### Espaciado
+- Margen exterior `px-edge`: 20px móvil / 32px desde md. Entre secciones `pt-section`: 96px / 160px.
+- Esquinas rectas en todo. Botones: primario (acento), tinta, enlace subrayado (`components/ui/Button.tsx`).
 
-- `base`: 8px
-- `gutter`: 24px
-- `margin-edge`: 48px (horizontal de sección — ojo: en mobile 375 esto deja 279px usable)
-- `section-gap`: 160px (separación entre "monumentos")
-- `grid-line-weight`: 1px
+### Movimiento
 
-### Reglas brutalistas (estrictas)
-
-- ❌ **CERO border-radius** en cualquier `rounded-*` utility (`full: "0"` también — TODOS los `rounded-*` resuelven a 0). Si necesitas algo redondo (cursor, avatar), usa **inline** `style={{ borderRadius: "9999px" }}` para bypass.
-- ❌ **CERO shadows** (`box-shadow: none` en todos los `shadow-*`)
-- ❌ Sin gradientes
-- ✅ Bordes 1px (accent-gray) o 2px (border-dark) son TODOS los separators
-- ✅ Líneas de grid visibles (12-col desktop / 4-col mobile) vía `.grid-bg` utility
-- ✅ Composición asimétrica intencional (hero original, before centering)
-- ✅ Hover = **inversión dura instantánea** (sin easing decorativo), `transition-none` casi siempre
-- ✅ Imágenes con borde 2px negro, `aspect-*` definido
+- Firma: el nombre sube desde su línea base al cargar (`.mask-line`).
+- Entradas por scroll: `<InView>` pone `data-armed`/`data-inview`; los hijos con `.reveal` (y `--i` para el orden) o `.clip-reveal` (barra de proceso) animan en CSS. Sin JS o con `prefers-reduced-motion`, todo es visible.
+- Lotties: se cargan al entrar en pantalla, se pausan fuera y con reduced-motion muestran el primer cuadro. Sus fondos fueron recoloreados a `tone` (#f1f1ef) para fundirse con el espacio de imagen.
 
 ---
 
 ## Estructura
 
 ```
-diego-mera-portfolio/
-├─ CLAUDE.md                        ← este archivo
-├─ README.md                        ← instrucciones públicas
-├─ .env.local                       ← gitignored: RESEND_API_KEY + CONTACT_EMAIL
-├─ .env.example                     ← versionado (vacío)
-├─ next.config.ts                   ← reactStrictMode, formats avif/webp
-├─ tailwind.config.ts               ← TODOS los design tokens
-├─ eslint.config.mjs                ← FlatCompat + next/core-web-vitals + prettier
-├─ tsconfig.json                    ← strict + noUncheckedIndexedAccess
-├─ content/case-studies/            ← 4 .mdx (frontmatter alimenta home + detail)
-│  ├─ shepwashi.mdx
-│  ├─ todo-domi.mdx
-│  ├─ labreicis.mdx
-│  └─ fundacion-madre-dolorosa.mdx
-├─ public/
-│  ├─ case-studies/[slug]/          ← cover/hero/body-01.png (placeholders blancos)
-│  └─ lottie/[slug].json            ← 4 animaciones Jitter Pro (license OK)
-├─ src/
-│  ├─ app/
-│  │  ├─ layout.tsx                 ← next/font + metadata + Preloader + Cursor + JSON-LD
-│  │  ├─ page.tsx                   ← Hero → FeaturedProjects → Process → About → Contact
-│  │  ├─ globals.css                ← @import tailwindcss + @config + base + preloader + grid-bg
-│  │  ├─ icon.png / apple-icon.png  ← favicons (DM monograma, gen via sharp)
-│  │  ├─ opengraph-image.png        ← OG (1200×630)
-│  │  ├─ twitter-image.png          ← Twitter card (1200×630)
-│  │  ├─ sitemap.ts                 ← genera sitemap.xml con home + 4 casos
-│  │  ├─ robots.ts                  ← Allow / · Disallow /api/
-│  │  ├─ projects/[slug]/page.tsx   ← SSG via generateStaticParams + MDX render
-│  │  └─ api/contact/route.ts       ← POST: Zod validation + honeypot + rate-limit + Resend (o mock)
-│  ├─ components/
-│  │  ├─ layout/   Navbar, Footer, GridOverlay, Preloader
-│  │  ├─ sections/ Hero, FeaturedProjects, Process, About, Contact, ContactForm
-│  │  ├─ ui/       Reveal, Cursor, TextRotate
-│  │  └─ work/     ProjectCard, LottieCover, CaseStudyNav, mdx-components
-│  └─ lib/
-│     ├─ site.ts          ← siteConfig, navLinks, socialLinks (TODO: dominio custom)
-│     ├─ utils.ts         ← cn() (clsx + tailwind-merge)
-│     ├─ content.ts       ← getAllCaseStudies, getCaseStudy, getCaseStudySlugs, getAdjacentCaseStudies
-│     ├─ contact-schema.ts← Zod schema compartido cliente/servidor
-│     └─ rate-limit.ts    ← in-memory sliding window 5/10min/IP
+src/
+├─ middleware.ts                 ← ES en la raíz (rewrite a /es), EN en /en, /es/* redirige 308
+├─ i18n/
+│  ├─ config.ts                  ← locales, localePath()
+│  └─ dictionaries.ts            ← TODO el texto ES/EN (fill() para plantillas {llave})
+├─ app/
+│  ├─ globals.css                ← tokens de tipo, .case-body, movimiento
+│  ├─ [lang]/layout.tsx          ← html lang, fuente, nav, footer, barra móvil, JSON-LD
+│  ├─ [lang]/page.tsx            ← Home: Hero → Cifras → Trabajo → Sobre mí → Proceso → (Testimonios) → Contacto
+│  ├─ [lang]/projects/[slug]/    ← Caso de estudio (frontmatter + cuerpo MDX)
+│  ├─ [lang]/about/              ← Sobre mí
+│  ├─ [lang]/contact/            ← Agenda + canales + formulario + FAQ
+│  ├─ api/contact/route.ts       ← Zod + honeypot + rate-limit + Resend (o mock)
+│  ├─ sitemap.ts / robots.ts     ← sitemap con ambos idiomas y hreflang
+│  └─ icon / og / twitter images
+├─ components/
+│  ├─ layout/   SiteNav, SiteFooter, LangSwitch, MobileCallBar
+│  ├─ home/     Hero, Numbers, WorkLedger, AboutTeaser, ProcessBar, Testimonials, HomeContact
+│  ├─ contact/  CallPlanner, ContactForm, LocalTime
+│  ├─ work/     LottieCover, case-mdx
+│  └─ ui/       Button, ActionRow, CtaBand, InView, MediaSlot, Highlighted
+└─ lib/
+   ├─ site.ts            ← datos fijos (email, WhatsApp, LinkedIn, bookingUrl) + whatsappHref/mailtoHref
+   ├─ links.ts           ← bookHref(), navItems(), alternatePath()
+   ├─ content.ts         ← casos por idioma, isFilled(), getNextCaseStudy()
+   ├─ contact-schema.ts  ← Zod (errores como códigos traducibles)
+   └─ rate-limit.ts
+content/case-studies/
+├─ *.mdx                 ← 6 casos en español (frontmatter + cuerpo)
+└─ en/*.mdx              ← traducción: campos vacíos caen al español
 ```
 
----
+### Rutas
 
-## Componentes custom (inventario rápido)
+| ES | EN |
+|---|---|
+| `/` | `/en` |
+| `/about` | `/en/about` |
+| `/contact` (`#agenda`) | `/en/contact` |
+| `/projects/[slug]` | `/en/projects/[slug]` |
 
-### `layout/`
-- **Navbar**: sticky 2px border-b, scrollspy via IntersectionObserver, panel móvil text "MENÚ/CERRAR" (NO hamburguesa — design system explicit ban), skip-link gestionado en layout.tsx
-- **Footer**: 2px border-t, logo "DIEGO_MERA" Anton, LinkedIn + Email, copyright dinámico
-- **GridOverlay**: reglas verticales fijas `accent-gray`, decorativo (`aria-hidden`), z-0
-- **Preloader**: CSS-only splash que se oculta solo en 1.3s, logo `DIEGO_MERA` centered, `forwards` mantiene oculto post-animación. Solo se ve en hard refresh — RSC navigations no remontan layout
-
-### `ui/`
-- **Reveal**: wrapper client con IntersectionObserver — fade+slide al entrar viewport, una vez. Prop `immediate` (Hero above-the-fold), `delay` (stagger). Respeta `prefers-reduced-motion`
-- **Cursor**: puntero custom desktop only (`matchMedia("(hover: hover) and (pointer: fine)")`), anillo 32px + punto 3px **inline** `borderRadius: 9999px` (bypass del `rounded-full: 0`), `mix-blend-difference` → negro sobre claro, blanco sobre oscuro automático. Hover sobre interactivos (a/button/input/[data-cursor-hover]) → escala 1.6×. Lerp 0.18/frame
-- **TextRotate**: rotador char-by-char con AnimatePresence + LayoutGroup support. Adaptado de motion-primitives (snippet del user) a framer-motion. Usado en Hero
-
-### `sections/`
-- **Hero**: titular centered con `LayoutGroup` + `TextRotate`. Hook "Diseño productos que [verbo]". Mobile 44px → sm 56px → md+ 120px. **No tagline larga** (eliminada). Body con `max-w-2xl mx-auto text-center`
-- **FeaturedProjects**: grid 2×2 con 4 case studies (col-span-6 cada uno, aspect-16/9). Sin titular visible (sr-only solo)
-- **Process**: 7 fases en grid 3-col (last col-span-3 monumento). Icono + FASE_NN + título + descripción siempre visibles. Stagger fade-in via framer-motion viewport. **NO curtain-reveal** (revertido)
-- **About**: quote como h2 display-xl + bio + Skills agrupados (UX/UI, IA, Soft skills)
-- **Contact**: h2 "¿Tienes un proyecto en mente?" + subtitle + ContactForm + DIRECTO (email + LinkedIn)
-- **ContactForm**: react-hook-form + zod, honeypot oculto, estados idle/loading/success/error, focus al status accesible
-
-### `work/`
-- **ProjectCard**: bordered 2px, **bg-surface-container-lowest** (NO -high — diferencia con Lottie blanco), aspect-16/9 default. Si `meta.lottie` existe → renderiza LottieCover, sino Image. Hover: title underline, focus visible
-- **LottieCover**: lazy-load runtime de lottie-react vía `next/dynamic`. Fetch JSON solo cuando card entra viewport (IO threshold 0.05). Pausa cuando sale viewport. `prefers-reduced-motion` → nunca carga Lottie, solo PNG fallback. Lotties siempre a color (sin grayscale ni mix-blend), `preserveAspectRatio: "xMidYMid meet"` (no crop), padding `p-4 md:p-6`
-- **CaseStudyNav**: prev/next circular, hover invert
-- **mdx-components**: tipografía cuidada para lectura larga en MDX, imágenes con next/image (w=1600 h=1000 default)
+Anclas de la home: `#trabajo`, `#proceso`, `#contacto`.
 
 ---
 
-## Anclas / Routing
+## Contenido: cómo editar
 
-- **Home single-page** con anchors: `#proyectos · #proceso · #sobre-mi · #contacto`
-- **Nav** (`navLinks` en `site.ts`): PROYECTOS / PROCESO / SOBRE MÍ / CONTACTO
-- **Order del DOM en page.tsx**: Hero → FeaturedProjects → Process → About → Contact
-- **/projects/[slug]**: SSG 4 páginas (shepwashi, todo-domi, labreicis, fundacion-madre-dolorosa)
-
-### Convenciones de slugs
-
-| Slug | Title (frontmatter) | Company |
-|---|---|---|
-| `shepwashi` | Dashboard interno de métricas | Shepwashi · Desarrollo de Software |
-| `todo-domi` | App de administración para restaurantes | Todo Domi · Plataforma de Delivery |
-| `labreicis` | Dashboard operativo multi-módulo | Labreicis · Acuicultura |
-| `fundacion-madre-dolorosa` | Sitio web institucional | Fundación Madre Dolorosa · Sin fines de lucro |
+- **Textos de páginas**: `src/i18n/dictionaries.ts` (editar `es` y `en` a la vez).
+- **Testimonios**: `home.testimonials.items` en el diccionario. La sección no aparece mientras la lista esté vacía.
+- **Agenda real**: poner el link de Cal.com/Calendly en `siteConfig.bookingUrl`; todos los "Agendar llamada" lo usan. Vacío = el planificador de `/contact` arma un WhatsApp con día y hora.
+- **Casos** (frontmatter): `shortTitle` (nombre en lista y h1), `kind`, `company`, `description`, `role`, `team`, `duration`, `platform`, `year`, `order`, `featured` (caso del hero), `lottie`, `results` (lista `{value, label}`; la sección Resultados se oculta si falta), `coverReady: true` cuando `cover`/`hero` sean capturas reales.
+- Valores que empiezan con `[` se consideran pendientes y no se muestran en la ficha del caso.
+- **Cuerpo de los casos**: los 7 bloques (`## Contexto` … `## Aprendizajes`) siguen como `[REEMPLAZAR]`. NO tocar salvo que Diego lo pida.
 
 ---
 
 ## Variables de entorno
 
-Solo dos. `.env.local` (gitignored) y Vercel Environment Variables:
-
 ```
-RESEND_API_KEY=re_XXXXXXXX     # Real para production; cualquier placeholder activa modo mock
+RESEND_API_KEY=re_XXXXXXXX     # Real en producción; cualquier placeholder activa modo mock
 CONTACT_EMAIL=diego.mera2002@hotmail.com
 ```
 
-**Modo mock**: si `RESEND_API_KEY` no existe o vale `"aquí_va_mi_api_key"` (o similar), `/api/contact` registra el envío en console y devuelve `{ok:true, mocked:true}` sin tocar Resend. Útil para desarrollo sin gastar cuota.
-
-**Dominio Resend**: en producción se envía desde `onboarding@resend.dev` (test sender de Resend — solo entrega al owner de la cuenta). Para enviar a cualquier email, verificar dominio custom en Resend y cambiar el `from:` en `src/app/api/contact/route.ts` línea ~75.
+Modo mock: si la key falta o es placeholder, `/api/contact` registra en consola y responde `{ok:true, mocked:true}`. En producción se envía desde `onboarding@resend.dev` (solo entrega al dueño de la cuenta Resend).
 
 ---
 
-## Comandos comunes
+## Comandos
 
 ```bash
-pnpm install          # deps
 pnpm dev              # localhost:3000
-pnpm build            # production build (verifica antes de pushear)
-pnpm lint             # next lint (next/core-web-vitals + typescript + prettier)
-pnpm typecheck        # tsc --noEmit
-pnpm format           # Prettier con orden de clases Tailwind
+pnpm typecheck && pnpm lint && pnpm build   # antes de pushear
+pnpm format           # Prettier + orden de clases
+node ~/.claude/skills/design-taste-frontend/scripts/inspect.mjs http://localhost:3000   # inspector de diseño
+node ~/.claude/skills/design-taste-frontend/scripts/lint.mjs src                       # lint de patrones prohibidos
 ```
 
-### Flujo de iteración
-
-```bash
-# Editar lo que sea
-git add .
-git commit -m "..."
-git push                       # Vercel auto-deploya en ~1-2 min
-```
-
-### Reset cuando dev se rompe
-
-```bash
-rm -rf .next node_modules/.cache
-pnpm dev
-```
-
-Si hay error tipo `Cannot read properties of undefined (reading 'call')` en webpack — siempre es cache HMR sucio. Ese reset lo arregla.
+Si el dev server se rompe tras un build: `rm -rf .next && pnpm dev`.
 
 ---
 
-## Reglas estrictas (acumuladas — respetar siempre)
+## Reglas
 
-1. **Fidelidad pixel-perfect al diseño de Stitch** salvo donde el user pida lo contrario. NO improvisar ni "mejorar". Cualquier desvío requiere flag explícito.
-2. **Mobile-first y responsive** real. Mobile breakpoint: 768px (md).
-3. **A11y WCAG AA**: contraste 4.5:1+, keyboard nav, focus visible, alt texts, ARIA labels, headings jerárquicos sin saltos.
-4. **TypeScript strict** + `noUncheckedIndexedAccess` + `noImplicitOverride`.
-5. **Server components por defecto**, `'use client'` SOLO cuando es necesario (state, effects, browser APIs).
-6. **next/font** — NO Google Fonts CDN.
-7. **next/image** para todo, lazy por defecto, `priority` solo above-the-fold (Hero, primera card).
-8. **Sin librerías de componentes pesadas** (no shadcn, MUI, Chakra) salvo que el user lo pida. Excepción aceptada: clsx + tailwind-merge (utilities tiny).
-9. **Nombres en inglés para código, contenido en español**.
-10. **Sin animaciones decorativas tipo "AI portfolio típico"**. Framer Motion solo donde aporte valor.
-11. **`prefers-reduced-motion`** SIEMPRE respetado — implementar fallbacks visibles.
-12. **NUNCA committear `.env.local`** ni keys reales — `.gitignore` ya lo cubre con `.env*` + `!.env.example`.
-
----
-
-## Conventions de naming
-
-- Componentes: `PascalCase.tsx`
-- Utilities: `kebab-case.ts` (`utils.ts`, `contact-schema.ts`)
-- Eyebrows brutalistas: `// PROCESO_DE_DISENO` (sin acentos, SCREAMING_SNAKE_CASE)
-- Phase labels: `FASE_01..07` (padded a 2 dígitos)
-- Frontmatter: `kebab-case` keys, valores en español
-- Commits: imperative mood, primera línea < 72 chars, cuerpo con razonamiento (no solo el "qué")
+1. Fidelidad al Figma "Propuesta A"; cualquier desvío se avisa.
+2. Mobile-first real (breakpoint md = 768px; diseño móvil a 393px).
+3. WCAG AA: contraste 4.5:1+, foco visible, alt/aria, headings sin saltos, objetivos táctiles ≥ 44px.
+4. TypeScript strict + `noUncheckedIndexedAccess`.
+5. Server components por defecto; `'use client'` solo con estado o APIs del navegador.
+6. Todo texto visible va en el diccionario (ES y EN).
+7. El acento naranja solo en la acción de agendar.
+8. `prefers-reduced-motion` siempre respetado.
+9. NUNCA commitear `.env.local` ni keys reales.
+10. Código en inglés, contenido en español (y su traducción).
+11. Commits en imperativo, primera línea < 72 caracteres.
 
 ---
 
-## Quirks / gotchas a recordar
+## Pendientes
 
-- **`rounded-full` = 0**: por la config brutalista. Cualquier círculo necesita `style={{ borderRadius: "9999px" }}` inline.
-- **shape layer ty:4 en Lotties Jitter**: el fondo de cada animación vive en una shape layer (rect + fill). Para uniformizar fondos, modificar el fill color a `[1,1,1]` (RGB normalizado).
-- **Framer Motion `whileInView` se congela en tabs hidden**: por eso usamos IntersectionObserver custom en `Reveal` (más confiable que viewport prop).
-- **Vercel security gate**: bloquea deploys con deps vulnerables. Si aparece `Build Failed` con "Vulnerable version of X detected", actualizar y push.
-- **Cursor + cards interactivas**: agregar `data-cursor-hover` para que el puntero escale al pasar encima.
-- **`maxlinks-2xl` mx-auto** en body Hero (centered desktop) para evitar line-length 1200px+ ilegible.
-- **Modo simulado de Resend**: si pushas a Vercel y el form devuelve `mocked:true`, falta actualizar `RESEND_API_KEY` en Vercel Settings → Environment Variables.
-
----
-
-## Estado de contenido (TODOs visibles)
-
-### Real
-
-- ✅ Hero: hook + tagline + CTAs
-- ✅ About: quote + bio + skills (UX/UI, IA, Soft skills)
-- ✅ Process: 7 fases con descripciones reales
-- ✅ Contact: copy real, form funcional probado E2E
-- ✅ Project cards (home): título, company, descripción, tags, año para los 4 casos
-- ✅ Imágenes Lottie animadas (4 casos, Jitter Pro license)
-
-### Pendiente
-
-- ⏳ **Cuerpo de los 4 case studies** — los 7 bloques (Contexto, Reto, Investigación, Proceso, Solución, Impacto, Aprendizajes) están como `[REEMPLAZAR]` en cada `.mdx`. NO TOCAR salvo que el user lo pida explícitamente — se trabajan en sesión separada.
-- ⏳ **Frontmatter de Fundación Madre Dolorosa**: `role` / `duration` / `team` son placeholders. Tags y description fueron rellenados con defaults razonables.
-- ⏳ **Screenshots reales** en `public/case-studies/[slug]/`: actualmente PNG blancos solid (32K cada uno). Diego los reemplaza con capturas reales sin cambiar dimensiones (1600×900 cover, 1920×1080 hero, 1600×1000 body-01).
-- ⏳ **Dominio custom** opcional (`diegomera.com` u otro). Al activarlo: actualizar `siteConfig.url`, verificar en Resend, cambiar `from:` en route handler.
-- ⏳ **Rotar API key Resend** — la actual fue compartida en chat anterior.
-
----
-
-## Workflow por fases (del brief original)
-
-El proyecto se construyó en 4 fases con gates explícitos:
-
-1. **FASE 1**: Descubrimiento del diseño en Stitch ✅
-2. **FASE 2**: Arquitectura y design tokens ✅
-3. **FASE 3**: Implementación sección por sección ✅ (3.1 Layout · 3.2 Hero+About · 3.3 Proyectos · 3.4 Proceso · 3.5 Contacto)
-4. **FASE 4**: Pulido, QA, deploy ✅
-
-Cambios posteriores al deploy: contenido real, microinteracciones, Lottie covers, cursor, preloader, hero rotator.
-
-**Regla del brief**: no avanzar entre fases sin aprobación explícita del user.
-
----
-
-## Si vas a ayudar a Diego en una sesión nueva
-
-1. Lee este archivo entero antes de tocar nada.
-2. Verifica el dev server limpio: `cd ~/diego-mera-portfolio && rm -rf .next && pnpm dev`.
-3. Si vas a editar la home: revisar `src/app/page.tsx` y los `src/components/sections/*`.
-4. Si vas a editar contenido: probablemente `src/lib/site.ts` (datos personales) o `content/case-studies/*.mdx` (casos).
-5. Si el cambio es visual: verificar que mantiene los design tokens y las reglas brutalistas.
-6. Antes de pushear: `pnpm typecheck && pnpm lint && pnpm build` deben pasar verde.
-7. Commit en imperative mood + push → Vercel auto-deploya. Confirmar verificando la URL.
-
-Cualquier decisión que se desvíe de estas convenciones: discutirla explícitamente con Diego antes de implementarla.
+- Imágenes reales: retrato, capturas de `gestion-de-siniestros` y `sitio-corporativo-shepwashi` (no tienen Lottie), y capturas para el resto (`coverReady`).
+- Métricas por caso (`results`) y cuerpo de los 6 casos.
+- Testimonios de LinkedIn.
+- Logo definitivo (hoy monograma "DM").
+- Link de agenda (`bookingUrl`).
+- Confirmar: duraciones del proceso, años de cada caso, "respondo en menos de 24 horas".
+- Imagen OG/Twitter todavía es la del diseño anterior.
+- Dominio custom opcional (actualizar `siteConfig.url`, verificar dominio en Resend, cambiar `from:`).
+- Rotar API key de Resend (fue compartida en un chat anterior).
