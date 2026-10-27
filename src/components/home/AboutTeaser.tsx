@@ -27,7 +27,8 @@ export function AboutTeaser({ lang, t }: AboutTeaserProps) {
           >
             <MediaSlot
               label={a.portrait}
-              note={t.common.imagePending}
+              image="/about/retrato.jpg"
+              ready
               className="aspect-[4/5]"
               sizes="(min-width: 768px) 33vw, 100vw"
             />
