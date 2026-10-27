@@ -41,10 +41,7 @@ export function ProcessBar({ t }: { t: Dictionary["home"]["process"] }) {
                 )}
                 style={{ "--i": i, "--w": stage.weight } as CSSProperties}
               >
-                <div className="flex items-baseline justify-between gap-3 md:flex-col md:gap-1">
-                  <span className="type-title font-medium">{stage.name}</span>
-                  <span>{stage.duration}</span>
-                </div>
+                <span className="type-title font-medium">{stage.name}</span>
                 <p className="mt-3 md:hidden">{stage.desc}</p>
               </div>
               <p

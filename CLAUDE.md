@@ -193,7 +193,7 @@ Si el dev server se rompe tras un build: `rm -rf .next && pnpm dev`.
 - Testimonios de LinkedIn.
 - Logo: isotipo DM de Diego (Figma Assets, "Logo DM Blanco/Negro") en blanco sobre recuadro de tinta (`components/brand/LogoMark.tsx`, `app/icon.svg`, `icon.png`, `apple-icon.png`).
 - Link de agenda (`bookingUrl`).
-- Confirmar: duraciones del proceso, años de cada caso, "respondo en menos de 24 horas".
+- Confirmar: años de cada caso, "respondo en menos de 24 horas".
 - Imagen OG/Twitter todavía es la del diseño anterior.
 - Dominio custom opcional (actualizar `siteConfig.url`, verificar dominio en Resend, cambiar `from:`).
 - Rotar API key de Resend (fue compartida en un chat anterior).

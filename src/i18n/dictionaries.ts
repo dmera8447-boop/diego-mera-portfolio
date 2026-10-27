@@ -70,11 +70,11 @@ const es = {
     about: {
       title: "Sobre mí",
       story:
-        "Soy Diego Mera, diseñador UX/UI en Samborondón, Ecuador. Antes de diseñar pasé dos años en ventas, y eso cambió mi forma de trabajar: escucho al cliente, hablo el idioma del negocio y priorizo lo que genera impacto. Hoy diseño productos de punta a punta para equipos de Latinoamérica y el Caribe: dashboards multirol para seguros y acuicultura, plataformas SaaS y sitios corporativos. Antes de abrir Figma entiendo el problema; después acompaño el handoff junto a developers y product managers hasta que el diseño se implementa bien. Una buena interfaz no se decora: se entiende.",
+        "Soy Diego Mera, diseñador UX/UI en Samborondón, Ecuador. Antes de diseñar pasé dos años en el área comercial, y eso cambió mi forma de trabajar: escucho al cliente, hablo el idioma del negocio y priorizo lo que genera impacto. Hoy diseño productos de punta a punta para equipos de Latinoamérica y el Caribe: dashboards multirol para seguros y acuicultura, plataformas SaaS y sitios corporativos. Antes de abrir Figma entiendo el problema; después acompaño el handoff junto a developers y product managers hasta que el diseño se implementa bien. Una buena interfaz no se decora: se entiende.",
       highlights: [
         "Diego Mera",
         "Samborondón, Ecuador",
-        "dos años en ventas",
+        "dos años en el área comercial",
         "el idioma del negocio",
         "Latinoamérica y el Caribe",
         "dashboards multirol",
@@ -90,31 +90,26 @@ const es = {
       stages: [
         {
           name: "Entender",
-          duration: "≈ 1 semana",
           weight: 18,
           desc: "Investigo usuarios, analizo benchmarks y defino qué problema hay que resolver.",
         },
         {
           name: "Estructurar",
-          duration: "3–5 días",
           weight: 16,
           desc: "Traduzco el análisis en user journeys, flujos y wireframes.",
         },
         {
           name: "Diseñar",
-          duration: "2–4 semanas",
           weight: 36,
           desc: "Prototipos de alta fidelidad en Figma, con design system y tokens.",
         },
         {
           name: "Validar",
-          duration: "≈ 1 semana",
           weight: 15,
           desc: "Reviso las decisiones con el equipo y stakeholders antes de desarrollo.",
         },
         {
           name: "Entregar",
-          duration: "Continuo",
           weight: 15,
           desc: "Documento y acompaño el handoff hasta que se implementa bien.",
         },
@@ -158,10 +153,10 @@ const es = {
   about: {
     metaTitle: "Sobre mí",
     metaDescription:
-      "Diseñador UX/UI en Samborondón, Ecuador. Vengo de ventas: diseño hablando el idioma del negocio.",
+      "Diseñador UX/UI en Samborondón, Ecuador. Vengo del área comercial: diseño hablando el idioma del negocio.",
     h1: "Hola, soy Diego.",
     statement:
-      "Diseñador UX/UI en Samborondón, Ecuador. Vengo de ventas, por eso diseño hablando el idioma del negocio.",
+      "Diseñador UX/UI en Samborondón, Ecuador. Vengo del área comercial, por eso diseño hablando el idioma del negocio.",
     story: [
       "Antes de diseñar pasé dos años como asesor comercial en Shepwashi y en Todo Domi. Ahí aprendí algo que no se enseña en un curso: cómo piensan las personas cuando deciden bajo presión.",
       "En 2024 pasé al equipo de diseño de Shepwashi. Desde entonces diseño productos de punta a punta para clientes de Latinoamérica y el Caribe: dashboards de siniestros y el sitio web de una insurtech, una plataforma para operación acuícola en desktop e iPad, el sitio de una línea de robótica de servicio y una app de concierge para huéspedes de hotel.",
@@ -393,7 +388,7 @@ const en: Dictionary = {
         {
           value: "4+",
           label:
-            "years in the tech industry: first on the sales side, now designing products.",
+            "years in the tech industry: first on the commercial side, now designing products.",
         },
         {
           value: "1",
@@ -406,11 +401,11 @@ const en: Dictionary = {
     about: {
       title: "About",
       story:
-        "I'm Diego Mera, a UX/UI designer based in Samborondón, Ecuador. Before design I spent two years in sales, and it changed how I work: I listen to clients, speak the language of the business and prioritise what drives impact. Today I design products end to end for teams across Latin America and the Caribbean: multi-role dashboards for insurance and aquaculture, SaaS platforms and corporate websites. Before opening Figma I understand the problem; afterwards I stay with developers and product managers through handoff until the design ships right. A good interface isn't decorated: it's understood.",
+        "I'm Diego Mera, a UX/UI designer based in Samborondón, Ecuador. Before design I spent two years on the commercial side, and it changed how I work: I listen to clients, speak the language of the business and prioritise what drives impact. Today I design products end to end for teams across Latin America and the Caribbean: multi-role dashboards for insurance and aquaculture, SaaS platforms and corporate websites. Before opening Figma I understand the problem; afterwards I stay with developers and product managers through handoff until the design ships right. A good interface isn't decorated: it's understood.",
       highlights: [
         "Diego Mera",
         "Samborondón, Ecuador",
-        "two years in sales",
+        "two years on the commercial side",
         "the language of the business",
         "Latin America and the Caribbean",
         "multi-role dashboards",
@@ -426,31 +421,26 @@ const en: Dictionary = {
       stages: [
         {
           name: "Understand",
-          duration: "≈ 1 week",
           weight: 18,
           desc: "I research users, study benchmarks and define the problem worth solving.",
         },
         {
           name: "Structure",
-          duration: "3–5 days",
           weight: 16,
           desc: "I turn that analysis into user journeys, flows and wireframes.",
         },
         {
           name: "Design",
-          duration: "2–4 weeks",
           weight: 36,
           desc: "High-fidelity prototypes in Figma, built on a design system and tokens.",
         },
         {
           name: "Validate",
-          duration: "≈ 1 week",
           weight: 15,
           desc: "I review decisions with the team and stakeholders before development.",
         },
         {
           name: "Deliver",
-          duration: "Ongoing",
           weight: 15,
           desc: "I document and stay through handoff until it ships right.",
         },
@@ -492,12 +482,12 @@ const en: Dictionary = {
   about: {
     metaTitle: "About",
     metaDescription:
-      "UX/UI designer based in Samborondón, Ecuador. I come from sales, so I design in the language of the business.",
+      "UX/UI designer based in Samborondón, Ecuador. I come from the commercial side, so I design in the language of the business.",
     h1: "Hi, I'm Diego.",
     statement:
-      "UX/UI designer based in Samborondón, Ecuador. I come from sales, so I design in the language of the business.",
+      "UX/UI designer based in Samborondón, Ecuador. I come from the commercial side, so I design in the language of the business.",
     story: [
-      "Before design I spent two years as a sales advisor at Shepwashi and Todo Domi. There I learned something no course teaches: how people think when they decide under pressure.",
+      "Before design I spent two years as a commercial advisor at Shepwashi and Todo Domi. There I learned something no course teaches: how people think when they decide under pressure.",
       "In 2024 I moved to Shepwashi's design team. Since then I design products end to end for clients across Latin America and the Caribbean: claims dashboards and the website for an insurtech company, a desktop and iPad platform for aquaculture operations, the website for a service robotics line and a concierge app for hotel guests.",
       "I've worked in insurance, aquaculture, robotics, hospitality and delivery. It taught me that process matters more than industry: if you understand the user and the business, you can design for any context.",
     ],
@@ -519,13 +509,13 @@ const en: Dictionary = {
         },
         {
           years: "2022 — 2024",
-          role: "Sales Advisor",
+          role: "Commercial Advisor",
           place: "Shepwashi · Samborondón",
           desc: "",
         },
         {
           years: "2023 — 2024",
-          role: "Sales Advisor",
+          role: "Commercial Advisor",
           place: "Todo Domi · Galápagos",
           desc: "",
         },
