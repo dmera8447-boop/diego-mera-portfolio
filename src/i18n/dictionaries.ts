@@ -50,19 +50,19 @@ const es = {
             "proyectos entregados para equipos de Ecuador, Latinoamérica y el Caribe.",
         },
         {
-          value: "4",
+          value: "6",
           label:
-            "industrias: seguros, delivery, acuicultura y organizaciones sociales.",
+            "industrias: seguros, acuicultura, robótica, hotelería, delivery y organizaciones sociales.",
         },
         {
-          value: "4,5",
+          value: "4+",
           label:
-            "años en Shepwashi: primero vendiendo, hoy diseñando sus productos.",
+            "años en la industria tecnológica: primero del lado comercial, hoy diseñando productos.",
         },
         {
-          value: "2",
+          value: "1",
           label:
-            "formatos por dashboard cuando hace falta: desktop e iPad, un solo sistema.",
+            "sistema de diseño por producto, del celular al escritorio: web, apps y dashboards hablan el mismo idioma.",
         },
       ],
     },
@@ -164,8 +164,8 @@ const es = {
       "Diseñador UX/UI en Samborondón, Ecuador. Vengo de ventas, por eso diseño hablando el idioma del negocio.",
     story: [
       "Antes de diseñar pasé dos años como asesor comercial en Shepwashi y en Todo Domi. Ahí aprendí algo que no se enseña en un curso: cómo piensan las personas cuando deciden bajo presión.",
-      "En 2024 pasé al equipo de diseño de Shepwashi. Desde entonces diseño productos de punta a punta para clientes de Latinoamérica y el Caribe: dashboards de siniestros para una insurtech, dashboards multirol en desktop e iPad para operación acuícola, y el sitio corporativo de Shepwashi y de su nueva línea de robótica.",
-      "He trabajado en tecnología, delivery, seguros y acuicultura. Eso me enseñó que el proceso importa más que la industria: si entiendes al usuario y al negocio, puedes diseñar para cualquier contexto.",
+      "En 2024 pasé al equipo de diseño de Shepwashi. Desde entonces diseño productos de punta a punta para clientes de Latinoamérica y el Caribe: dashboards de siniestros y el sitio web de una insurtech, una plataforma para operación acuícola en desktop e iPad, el sitio de una línea de robótica de servicio y una app de concierge para huéspedes de hotel.",
+      "He trabajado en seguros, acuicultura, robótica, hotelería y delivery. Eso me enseñó que el proceso importa más que la industria: si entiendes al usuario y al negocio, puedes diseñar para cualquier contexto.",
     ],
     seeWork: "Ver mi trabajo",
     experience: {
@@ -386,19 +386,19 @@ const en: Dictionary = {
             "projects delivered for teams in Ecuador, Latin America and the Caribbean.",
         },
         {
-          value: "4",
+          value: "6",
           label:
-            "industries: insurance, delivery, aquaculture and non-profits.",
+            "industries: insurance, aquaculture, robotics, hospitality, delivery and non-profits.",
         },
         {
-          value: "4.5",
+          value: "4+",
           label:
-            "years at Shepwashi: first selling, now designing its products.",
+            "years in the tech industry: first on the sales side, now designing products.",
         },
         {
-          value: "2",
+          value: "1",
           label:
-            "formats per dashboard when needed: desktop and iPad, one system.",
+            "design system per product, from phone to desktop: websites, apps and dashboards speak the same language.",
         },
       ],
     },
@@ -498,8 +498,8 @@ const en: Dictionary = {
       "UX/UI designer based in Samborondón, Ecuador. I come from sales, so I design in the language of the business.",
     story: [
       "Before design I spent two years as a sales advisor at Shepwashi and Todo Domi. There I learned something no course teaches: how people think when they decide under pressure.",
-      "In 2024 I moved to Shepwashi's design team. Since then I design products end to end for clients across Latin America and the Caribbean: claims dashboards for an insurtech platform, multi-role desktop and iPad dashboards for aquaculture operations, and the corporate website for Shepwashi and its new robotics line.",
-      "I've worked in technology, delivery, insurance and aquaculture. It taught me that process matters more than industry: if you understand the user and the business, you can design for any context.",
+      "In 2024 I moved to Shepwashi's design team. Since then I design products end to end for clients across Latin America and the Caribbean: claims dashboards and the website for an insurtech company, a desktop and iPad platform for aquaculture operations, the website for a service robotics line and a concierge app for hotel guests.",
+      "I've worked in insurance, aquaculture, robotics, hospitality and delivery. It taught me that process matters more than industry: if you understand the user and the business, you can design for any context.",
     ],
     seeWork: "See my work",
     experience: {
