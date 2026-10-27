@@ -191,7 +191,7 @@ Si el dev server se rompe tras un build: `rm -rf .next && pnpm dev`.
 - Retrato (no estaba en la página Assets). Confirmar años, rol y empresa de Luntriqa, Robótica y Ecosystem.
 - Métricas por caso (`results`); Diego debe validar el texto de los 5 casos (se agregan secciones Investigación/Impacto cuando haya datos reales).
 - Testimonios de LinkedIn.
-- Logo: monograma DM (`components/brand/LogoMark.tsx`, `app/icon.svg`, `icon.png`, `apple-icon.png`).
+- Logo: isotipo DM de Diego (Figma Assets, "Logo DM Blanco/Negro") en blanco sobre recuadro de tinta (`components/brand/LogoMark.tsx`, `app/icon.svg`, `icon.png`, `apple-icon.png`).
 - Link de agenda (`bookingUrl`).
 - Confirmar: duraciones del proceso, años de cada caso, "respondo en menos de 24 horas".
 - Imagen OG/Twitter todavía es la del diseño anterior.
