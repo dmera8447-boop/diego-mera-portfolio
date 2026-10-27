@@ -8,6 +8,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { bookHref, navItems } from "@/lib/links";
 import { whatsappHref } from "@/lib/site";
 import { ButtonLink } from "@/components/ui/Button";
+import { LogoMark } from "@/components/brand/LogoMark";
 import { LangSwitch } from "./LangSwitch";
 import { cn } from "@/lib/utils";
 
@@ -50,13 +51,7 @@ export function SiteNav({ lang, t, common }: SiteNavProps) {
           aria-label={t.home}
           className="flex items-center gap-2.5"
         >
-          {/* Logo provisional: monograma DM hasta tener el definitivo */}
-          <span
-            aria-hidden="true"
-            className="bg-ink text-on-ink flex h-8 w-8 items-center justify-center text-[13px] font-semibold"
-          >
-            DM
-          </span>
+          <LogoMark className="h-8 w-8" />
           <span className="font-medium">Diego Mera</span>
         </Link>
 

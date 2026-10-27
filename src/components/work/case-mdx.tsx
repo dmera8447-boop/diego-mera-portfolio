@@ -76,5 +76,7 @@ export const caseMdxComponents: Record<
   // Las secciones se separan por espacio, no con líneas
   hr: () => null,
   img: CaseImg,
+  // <Figure src alt /> en el MDX: imagen a todo el ancho sin quedar dentro de un <p>
+  Figure: CaseImg as ComponentType<Props & Record<string, unknown>>,
   a: CaseLink,
 };

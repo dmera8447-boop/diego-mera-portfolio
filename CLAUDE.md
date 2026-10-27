@@ -116,7 +116,7 @@ src/
    ├─ contact-schema.ts  ← Zod (errores como códigos traducibles)
    └─ rate-limit.ts
 content/case-studies/
-├─ *.mdx                 ← 6 casos en español (frontmatter + cuerpo)
+├─ *.mdx                 ← casos en español; principales: siniestros, labreicis, luntriqa, robotica, ecosystem (el resto con `hidden: true`)
 └─ en/*.mdx              ← traducción: campos vacíos caen al español
 ```
 
@@ -138,7 +138,8 @@ Anclas de la home: `#trabajo`, `#proceso`, `#contacto`.
 - **Textos de páginas**: `src/i18n/dictionaries.ts` (editar `es` y `en` a la vez).
 - **Testimonios**: `home.testimonials.items` en el diccionario. La sección no aparece mientras la lista esté vacía.
 - **Agenda real**: poner el link de Cal.com/Calendly en `siteConfig.bookingUrl`; todos los "Agendar llamada" lo usan. Vacío = el planificador de `/contact` arma un WhatsApp con día y hora.
-- **Casos** (frontmatter): `shortTitle` (nombre en lista y h1), `kind`, `company`, `description`, `role`, `team`, `duration`, `platform`, `year`, `order`, `featured` (caso del hero), `lottie`, `results` (lista `{value, label}`; la sección Resultados se oculta si falta), `coverReady: true` cuando `cover`/`hero` sean capturas reales.
+- **Casos** (frontmatter): `shortTitle` (nombre en lista y h1), `kind`, `company`, `description`, `role`, `team`, `duration`, `platform`, `year`, `order`, `featured` (caso del hero), `hidden` (fuera de la lista y el sitemap), `lottie`, `results` (lista `{value, label}`; la sección Resultados se oculta si falta), `coverReady: true` cuando `cover`/`hero` sean capturas reales.
+- Imágenes extra en el cuerpo: `<Figure src="/case-studies/slug/x.jpg" alt="…" />`. Las capturas salen de la página **Assets** del Figma (exportadas a JPG 2400px).
 - Valores que empiezan con `[` se consideran pendientes y no se muestran en la ficha del caso.
 - **Cuerpo de los casos**: los 7 bloques (`## Contexto` … `## Aprendizajes`) siguen como `[REEMPLAZAR]`. NO tocar salvo que Diego lo pida.
 
@@ -187,10 +188,10 @@ Si el dev server se rompe tras un build: `rm -rf .next && pnpm dev`.
 
 ## Pendientes
 
-- Imágenes reales: retrato, capturas de `gestion-de-siniestros` y `sitio-corporativo-shepwashi` (no tienen Lottie), y capturas para el resto (`coverReady`).
+- Retrato (no estaba en la página Assets). Confirmar años, rol y empresa de Luntriqa, Robótica y Ecosystem.
 - Métricas por caso (`results`) y cuerpo de los 6 casos.
 - Testimonios de LinkedIn.
-- Logo definitivo (hoy monograma "DM").
+- Logo: monograma DM (`components/brand/LogoMark.tsx`, `app/icon.svg`, `icon.png`, `apple-icon.png`).
 - Link de agenda (`bookingUrl`).
 - Confirmar: duraciones del proceso, años de cada caso, "respondo en menos de 24 horas".
 - Imagen OG/Twitter todavía es la del diseño anterior.

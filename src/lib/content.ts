@@ -52,6 +52,8 @@ export interface CaseStudyMeta {
   featured?: boolean;
   /** Orden de aparición (menor primero) */
   order: number;
+  /** Fuera de la lista y del sitemap; la página sigue existiendo */
+  hidden?: boolean;
 }
 
 export interface CaseStudy extends CaseStudyMeta {
@@ -114,7 +116,7 @@ export async function getAllCaseStudies(
   const slugs = await getCaseStudySlugs();
   const studies = await Promise.all(slugs.map((slug) => load(lang, slug)));
   return studies
-    .filter((s): s is CaseStudy => s !== null)
+    .filter((s): s is CaseStudy => s !== null && !s.hidden)
     .map(({ content: _content, ...meta }) => meta)
     .sort((a, b) => a.order - b.order);
 }

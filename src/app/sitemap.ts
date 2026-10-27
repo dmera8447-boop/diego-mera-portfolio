@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 import { localePath, locales } from "@/i18n/config";
-import { getCaseStudySlugs } from "@/lib/content";
+import { getAllCaseStudies } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url.replace(/\/$/, "");
-  const slugs = await getCaseStudySlugs();
+  const slugs = (await getAllCaseStudies("es")).map((s) => s.slug);
   const now = new Date();
   const paths = [
     { path: "/", priority: 1 },
