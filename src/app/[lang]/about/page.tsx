@@ -49,7 +49,8 @@ export default async function AboutPage({ params }: { params: Params }) {
           >
             <MediaSlot
               label={t.home.about.portrait}
-              note={t.common.imagePending}
+              image="/about/retrato.jpg"
+              ready
               className="aspect-[4/5]"
               sizes="(min-width: 768px) 40vw, 100vw"
               priority

@@ -188,7 +188,7 @@ Si el dev server se rompe tras un build: `rm -rf .next && pnpm dev`.
 
 ## Pendientes
 
-- Retrato (no estaba en la página Assets). Confirmar años, rol y empresa de Luntriqa, Robótica y Ecosystem.
+- Retrato listo en `public/about/retrato.jpg` (recorte 4:5). Confirmar años, rol y empresa de Luntriqa, Robótica y Ecosystem.
 - Métricas por caso (`results`); Diego debe validar el texto de los 5 casos (se agregan secciones Investigación/Impacto cuando haya datos reales).
 - Testimonios de LinkedIn.
 - Logo: isotipo DM de Diego (Figma Assets, "Logo DM Blanco/Negro") en blanco sobre recuadro de tinta (`components/brand/LogoMark.tsx`, `app/icon.svg`, `icon.png`, `apple-icon.png`).
