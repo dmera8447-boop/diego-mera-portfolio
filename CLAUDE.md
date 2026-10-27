@@ -141,7 +141,7 @@ Anclas de la home: `#trabajo`, `#proceso`, `#contacto`.
 - **Casos** (frontmatter): `shortTitle` (nombre en lista y h1), `kind`, `company`, `description`, `role`, `team`, `duration`, `platform`, `year`, `order`, `featured` (caso del hero), `hidden` (fuera de la lista y el sitemap), `lottie`, `results` (lista `{value, label}`; la sección Resultados se oculta si falta), `coverReady: true` cuando `cover`/`hero` sean capturas reales.
 - Imágenes extra en el cuerpo: `<Figure src="/case-studies/slug/x.jpg" alt="…" />`. Las capturas salen de la página **Assets** del Figma (exportadas a JPG 2400px).
 - Valores que empiezan con `[` se consideran pendientes y no se muestran en la ficha del caso.
-- **Cuerpo de los casos**: los 7 bloques (`## Contexto` … `## Aprendizajes`) siguen como `[REEMPLAZAR]`. NO tocar salvo que Diego lo pida.
+- **Cuerpo de los casos**: los 5 principales tienen texto (Contexto, Reto, Enfoque, Solución, Aprendizajes) escrito por Claude a partir de las capturas, sin métricas inventadas; Diego lo revisa y se afina con sus respuestas. Los ocultos siguen como `[REEMPLAZAR]`.
 
 ---
 
@@ -189,7 +189,7 @@ Si el dev server se rompe tras un build: `rm -rf .next && pnpm dev`.
 ## Pendientes
 
 - Retrato (no estaba en la página Assets). Confirmar años, rol y empresa de Luntriqa, Robótica y Ecosystem.
-- Métricas por caso (`results`) y cuerpo de los 6 casos.
+- Métricas por caso (`results`); Diego debe validar el texto de los 5 casos (se agregan secciones Investigación/Impacto cuando haya datos reales).
 - Testimonios de LinkedIn.
 - Logo: monograma DM (`components/brand/LogoMark.tsx`, `app/icon.svg`, `icon.png`, `apple-icon.png`).
 - Link de agenda (`bookingUrl`).

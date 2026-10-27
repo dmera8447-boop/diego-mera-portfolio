@@ -1,37 +1,54 @@
 ---
-title: "Multi-module operations dashboard"
 shortTitle: "Aquaculture operations"
-kind: "Labreicis · Desktop + iPad dashboard"
 company: "Labreicis · Aquaculture"
-description: "A management system for a shrimp farm that brought information scattered across paper tools and spreadsheets into a single digital platform."
 role: ""
 platform: "Desktop + iPad"
+kind: "Labreicis · Desktop + iPad platform"
+title: "Multi-module operations platform"
+description: "A platform that brings together the operations, warehouse and administration of a shrimp larvae lab, with a dashboard that starts from what needs attention."
 ---
 
 ## Context
 
-[REPLACE] Project background, product and users.
+Labreicis is a shrimp larvae laboratory. Its daily operations include tanks, production runs, water-quality readings and a supplies warehouse.
+
+Much of that information lived in notebooks, spreadsheets and messages between biologists, the warehouse and administration.
 
 ## Challenge
 
-[REPLACE] The specific problem to solve.
+The lab's operations, warehouse and administration had to come together in one platform, for people who work both in the office and next to the tanks.
 
-## Research
+The risk was building a complete system that was hard to read day to day, where what's urgent got buried between modules.
 
-[REPLACE] Methods, key findings, insights.
+## Approach
 
-## Process
+I organised the product into three areas that mirror how the work is split:
 
-[REPLACE] Architecture, wireframes, design system, iterations.
+- **Operations:** tanks, runs and tracking.
+- **Warehouse:** inventory, approvals and history.
+- **Administration:** labs and tanks, the supplies catalogue, and users and roles.
+
+The dashboard wasn't designed as a report but as the starting point of the shift. It greets whoever logs in and shows first what needs their attention.
+
+I designed the platform for desktop and iPad, because much of the work happens outside the office.
 
 ## Solution
 
-[REPLACE] The final proposal and design decisions.
+The top of the screen sums up the lab's status in four figures: tanks in use, runs in progress, requests awaiting approval and inventory value.
 
-## Impact
+Below, the "Needs your attention" block gathers into one list what used to arrive through different channels:
 
-[REPLACE] Metrics and results (+X% conversion, etc.).
+- A supplies request awaiting approval.
+- A tank with ammonia out of range.
+- Supplies running low.
+- An approved run that hasn't been stocked yet.
+
+Each alert carries a status label and its direct action: review, view tank, view inventory or log.
+
+The rest of the screen completes the picture of the day: the table of runs in progress with their phase and lead biologist, tank status by range (optimal, attention, critical, available) and the supplies below their minimum.
 
 ## Learnings
 
-[REPLACE] What worked, what you would change.
+When a system replaces paper and spreadsheets, the first screen has to earn the trust of the people using it: if it shows what's urgent with the action right next to it, it becomes the place where the day starts.
+
+Separating operations, warehouse and administration also helped define roles and permissions clearly.
