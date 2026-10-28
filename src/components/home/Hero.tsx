@@ -34,13 +34,13 @@ export function Hero({ lang, t, featured }: HeroProps) {
       <div className="mt-6 grid gap-6 md:mt-14 md:grid-cols-12 md:items-end md:gap-8">
         <p
           className="type-lead fade-up max-w-[760px] md:col-span-7"
-          style={{ animationDelay: "250ms" }}
+          style={{ animationDelay: "120ms" }}
         >
           {t.home.statement}
         </p>
         <div
           className="fade-up flex flex-col gap-5 md:col-span-4 md:col-start-9"
-          style={{ animationDelay: "380ms" }}
+          style={{ animationDelay: "200ms" }}
         >
           <p>{t.common.availability}</p>
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6">
@@ -60,7 +60,7 @@ export function Hero({ lang, t, featured }: HeroProps) {
       {featured ? (
         <figure
           className="fade-up mt-9 md:mt-12"
-          style={{ animationDelay: "500ms" }}
+          style={{ animationDelay: "280ms" }}
         >
           <Link
             href={localePath(lang, `/projects/${featured.slug}`)}

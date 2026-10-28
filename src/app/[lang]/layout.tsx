@@ -11,7 +11,7 @@ import "../globals.css";
 
 // Una sola familia en todo el sitio (self-hosted por next/font)
 const host = Host_Grotesk({
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
   subsets: ["latin", "latin-ext"],
   variable: "--font-host",
   display: "swap",

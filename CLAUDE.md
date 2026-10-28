@@ -36,7 +36,7 @@ Convertir visitas en conversaciones. Público principal: empresas de software B2
 | Contenido | MDX + gray-matter + next-mdx-remote (≥ 6.0.0) | |
 | Formularios | react-hook-form + zod | |
 | Animación de casos | lottie-react (lazy) | |
-| Fuentes | next/font (Host Grotesk, self-hosted) | |
+| Fuentes | next/font (Host Grotesk 400/500, self-hosted) | |
 | Hosting | Vercel | `pnpm install` + `next build` |
 
 `framer-motion` y `lucide-react` siguen instalados pero el rediseño no los usa (el movimiento es CSS + IntersectionObserver).
