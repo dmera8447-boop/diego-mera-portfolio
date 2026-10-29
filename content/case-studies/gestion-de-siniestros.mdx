@@ -1,19 +1,19 @@
 ---
 title: "Rediseño de la gestión de siniestros"
-role: "Diseñador UX/UI · flujos, interfaz y sistema de diseño"
+role: "Diseño UX/UI completo: flujos, interfaz y sistema de diseño"
 duration: "3 semanas"
-team: "PM y equipo de desarrollo"
+team: "PM y desarrollo"
 year: "2026"
-tags: ["Dashboard", "Insurtech", "Multirol"]
+tags: ["Dashboard", "Insurtech", "Multirol", "IA"]
 liveUrl: ""
 shortTitle: "Gestión de siniestros"
-cover: "/case-studies/gestion-de-siniestros/cover.jpg"
-hero: "/case-studies/gestion-de-siniestros/cover.jpg"
+cover: "/case-studies/gestion-de-siniestros/hero-claro.png"
+hero: "/case-studies/gestion-de-siniestros/hero-claro.png"
 coverReady: true
 order: 1
 company: "Luntriqa · Insurtech"
 kind: "Luntriqa · Dashboard de siniestros"
-description: "Rediseño completo de los módulos de gestión de Luntriqa: una sola estructura y un solo sistema de diseño para aseguradoras, brokers y clientes."
+description: "Rediseño completo de Luntriqa, con sus módulos de gestión y Mr. I, asistente de IA para la gerencia, sobre una sola estructura y un solo sistema de diseño."
 ---
 
 ## Contexto
@@ -36,24 +36,89 @@ Además, tres roles usan la misma plataforma con necesidades distintas:
 
 Al ser un producto interno, las necesidades y los problemas de los usuarios me llegaron directo del PM y de los developers, que conocen el día a día de cada rol.
 
-La decisión que más costó defender fue unificar los tres roles en una sola estructura de navegación y un solo sistema de diseño, en vez de rediseñar cada módulo por separado. Tomaba más tiempo al inicio, pero hacía el producto más consistente y más fácil de mantener para desarrollo.
+La decisión que más costó defender fue unificar los roles en una sola estructura de navegación y un solo sistema de diseño, en vez de rediseñar cada módulo por separado. Tomaba más tiempo al inicio, pero hacía el producto más consistente y más fácil de mantener para desarrollo.
 
 - Una sola navegación que se adapta al rol, en lugar de una pantalla distinta para cada perfil.
 - Componentes compartidos entre módulos, para que desarrollo construya una vez y reutilice.
-- La primera fila del dashboard responde las preguntas de todos los días: total de siniestros, tiempo promedio de apertura a cierre, cumplimiento de SLA contra su meta y monto pendiente.
+- La primera fila de cada dashboard responde las preguntas de todos los días antes de entrar al detalle.
+
+El sistema de diseño compartido hizo posible diseñar después a Mr. I sin partir de cero.
+
+## Módulos
+
+Tres módulos, tres públicos y una misma base: la misma navegación, los mismos componentes y la misma forma de leer los datos.
+
+<Modules>
+<Module title="Siniestros" audience="Aseguradora" src="/case-studies/gestion-de-siniestros/laptop-siniestros.png" alt="Módulo de siniestros en laptop: indicadores, dona con la distribución por estado y lectura en lenguaje natural">
+
+El análisis se organiza en pestañas (estados, subcategorías y tendencias) para que la vista principal no se sature.
+
+Una dona resume la distribución por estado y, debajo, una línea en lenguaje natural interpreta los números para quien no vive dentro de ellos.
+
+</Module>
+<Module title="Venta en piso" audience="Oficinas y agentes" src="/case-studies/gestion-de-siniestros/laptop-venta-en-piso.png" alt="Módulo de venta en piso en laptop: estadísticas de ventas, ventas por día y ventas por producto">
+
+Estadísticas de ventas, ranking de oficinas y órdenes en un mismo lugar.
+
+Diseñé también el flujo de venta a un cliente nuevo: registro por pasos, pago, firma y validación.
+
+</Module>
+<Module title="Ventas web" audience="Portal del cliente" src="/case-studies/gestion-de-siniestros/laptop-ventas-web.png" alt="Portal del cliente en laptop: dashboard de pólizas y siniestros">
+
+Un dashboard con las pólizas y los siniestros del cliente, y el detalle de cada póliza.
+
+Reportar un siniestro nuevo se hace por pasos, y después el cliente sigue su avance sin tener que llamar.
+
+</Module>
+</Modules>
+
+<Feature>
+
+## Mr. I, la capa de inteligencia
+
+Mr. I es un asistente de IA para aseguradoras. Se conecta con los módulos a través de sus estadísticas y está pensado para la gerencia, que necesita respuestas, no pantallas.
+
+### Chat primero
+
+La decisión de diseño central fue empezar por el chat. Cada respuesta llega con datos visuales (indicadores, gráficos, hallazgos y acciones), no solo con texto.
+
+### Lo que diseñé
+
+- **Chat con respuestas visuales:** un resumen ejecutivo de los cuatro módulos, con recomendaciones.
+- **Dashboard gerencial a pantalla completa:** filtros solo de período y módulo, y los datos clave de Siniestros, Venta en piso, Ventas web y Optimización. Por ejemplo, el tiempo promedio de resolución de un siniestro frente a una meta de 7 días y los casos fuera de meta.
+- **Estado "pensando":** una lista de pasos con casillas que muestra qué está haciendo la IA antes de responder.
+- **Estados vacíos y temas:** nuevo chat, dashboard sin datos, y modo claro y oscuro.
+- **Responsive:** desktop a 1440 y móvil a 393.
+
+### Refinamiento
+
+Quité el logo de Luntriqa para dejar solo la marca Mr. I, y eliminé íconos, pastillas y tarjetas repetidas para que el producto se viera más sobrio y legible.
+
+También quité las preguntas sugeridas, para dejar un chat limpio.
+
+<ThemeGallery
+  base="/case-studies/gestion-de-siniestros"
+  label="Tema de las pantallas de Mr. I"
+  lightLabel="Claro"
+  darkLabel="Oscuro"
+  screens="inicio:Inicio, chat:Chat, pensando:Pensando, dashboard:Dashboard"
+  wide="laptop-dashboard-gerencial"
+  wideAlt="Dashboard gerencial de Mr. I en laptop"
+  note="Las pantallas usan datos ficticios."
+/>
+
+</Feature>
 
 ## Solución
 
-El análisis se organiza en pestañas (estados, subcategorías y tendencias), de modo que la vista principal no se satura. Dos filtros fijos arriba, tipo de siniestro y período, acotan todo sin salir de la pantalla.
+El rediseño se entregó como parte de Luntriqa y se está implementando de forma gradual con el equipo de desarrollo.
 
-En la pestaña de estados, una dona resume la distribución y, al lado, el detalle muestra la cantidad por estado y su participación sobre el total. Debajo, una línea en lenguaje natural interpreta los números, por ejemplo: "Más de la mitad de los siniestros sigue pendiente de revisión".
-
-Como extra, diseñé Mr. I, un asistente de IA con un dashboard estadístico pensado para la gerencia.
-
-El rediseño se entregó como parte de Luntriqa y se está implementando de forma gradual con el equipo de desarrollo. El primer efecto visible: los flujos de creación de siniestros se completan en menos tiempo.
+El primer efecto visible: los flujos de creación de siniestros se completan en menos tiempo.
 
 ## Aprendizajes
 
 En un producto multirol, rediseñar módulo por módulo es más rápido al principio, pero multiplica las inconsistencias. Invertir primero en una estructura y un sistema compartidos fue lo que hizo posible entregar en tres semanas algo que desarrollo puede mantener.
 
 Escribir la conclusión junto al gráfico resultó tan importante como el gráfico mismo, sobre todo para los perfiles que no viven dentro de los números.
+
+Un asistente de IA solo es útil si se apoya en datos de los módulos reales: diseñarlo después del sistema compartido lo hizo coherente con el resto del producto.

@@ -1,13 +1,13 @@
 ---
 shortTitle: "Claims management"
-role: "UX/UI Designer · flows, interface and design system"
+role: "End-to-end UX/UI design: flows, interface and design system"
 duration: "3 weeks"
-team: "PM and development team"
+team: "PM and development"
 platform: ""
 company: "Luntriqa · Insurtech"
 kind: "Luntriqa · Claims dashboard"
 title: "Claims management redesign"
-description: "A full redesign of Luntriqa's management modules: one structure and one design system for insurers, brokers and clients."
+description: "A full redesign of Luntriqa, with its management modules and Mr. I, an AI assistant for management, built on one structure and one design system."
 ---
 
 ## Context
@@ -30,24 +30,89 @@ On top of that, three roles share the same platform with different needs:
 
 Since it was an internal product, users' needs and pain points came to me straight from the PM and the developers, who know each role's day-to-day.
 
-The decision that took the most defending was unifying the three roles under one navigation structure and one design system, instead of redesigning each module separately. It took longer at first, but it made the product more consistent and easier for development to maintain.
+The decision that took the most defending was unifying the roles under one navigation structure and one design system, instead of redesigning each module separately. It took longer at first, but it made the product more consistent and easier for development to maintain.
 
 - One navigation that adapts to the role, instead of a separate screen for each profile.
 - Components shared across modules, so development builds once and reuses.
-- The dashboard's first row answers the everyday questions: total claims, average time from opening to close, SLA compliance against its target, and the amount pending.
+- The first row of every dashboard answers the everyday questions before going into detail.
+
+The shared design system made it possible to design Mr. I later without starting from scratch.
+
+## Modules
+
+Three modules, three audiences and one foundation: the same navigation, the same components and the same way of reading data.
+
+<Modules>
+<Module title="Claims" audience="Insurer" src="/case-studies/gestion-de-siniestros/laptop-siniestros.png" alt="Claims module on a laptop: indicators, donut chart by state and a plain-language reading">
+
+The analysis is organised in tabs (states, subcategories and trends) so the main view never gets crowded.
+
+A donut chart sums up the distribution by state and, below it, a plain-language line reads the numbers for those who don't live inside them.
+
+</Module>
+<Module title="In-branch sales" audience="Branches and agents" src="/case-studies/gestion-de-siniestros/laptop-venta-en-piso.png" alt="In-branch sales module on a laptop: sales statistics, sales per day and sales per product">
+
+Sales statistics, a branch ranking and orders in one place.
+
+I also designed the flow for selling to a new client: step-by-step registration, payment, signature and validation.
+
+</Module>
+<Module title="Web sales" audience="Client portal" src="/case-studies/gestion-de-siniestros/laptop-ventas-web.png" alt="Client portal on a laptop: policies and claims dashboard">
+
+A dashboard with the client's policies and claims, plus the detail of each policy.
+
+Reporting a new claim happens step by step, and the client then follows its progress without having to call.
+
+</Module>
+</Modules>
+
+<Feature>
+
+## Mr. I, the intelligence layer
+
+Mr. I is an AI assistant for insurers. It connects to the modules through their statistics and is built for management, who need answers, not screens.
+
+### Chat first
+
+The core design decision was to start from the chat. Every answer arrives with visual data (indicators, charts, findings and actions), not just text.
+
+### What I designed
+
+- **Chat with visual answers:** an executive summary of the four modules, with recommendations.
+- **Full-screen management dashboard:** filters only for period and module, and the key data from Claims, In-branch sales, Web sales and Optimisation. For example, the average time to resolve a claim against a 7-day target, and the cases outside it.
+- **"Thinking" state:** a checklist of steps that shows what the AI is doing before it answers.
+- **Empty states and themes:** new chat, dashboard without data, and light and dark mode.
+- **Responsive:** desktop at 1440 and mobile at 393.
+
+### Refinement
+
+I removed the Luntriqa logo to keep only the Mr. I brand, and cut repeated icons, pills and cards so the product would feel calmer and easier to read.
+
+I also removed the suggested questions, to leave a clean chat.
+
+<ThemeGallery
+  base="/case-studies/gestion-de-siniestros"
+  label="Theme of the Mr. I screens"
+  lightLabel="Light"
+  darkLabel="Dark"
+  screens="inicio:Home, chat:Chat, pensando:Thinking, dashboard:Dashboard"
+  wide="laptop-dashboard-gerencial"
+  wideAlt="Mr. I management dashboard on a laptop"
+  note="The screens use fictitious data."
+/>
+
+</Feature>
 
 ## Solution
 
-The analysis is organised in tabs (states, subcategories and trends), so the main view never gets crowded. Two filters fixed at the top, claim type and period, narrow everything without leaving the screen.
+The redesign shipped as part of Luntriqa and is being rolled out gradually with the development team.
 
-In the states tab, a donut chart sums up the distribution and, next to it, the breakdown shows each state's count and share of the total. Below, a plain-language line reads the numbers, for example: "More than half of the claims are still pending review".
-
-As an extra, I designed Mr. I, an AI assistant with a statistics dashboard built for management.
-
-The redesign shipped as part of Luntriqa and is being rolled out gradually with the development team. The first visible effect: claim creation flows take less time to complete.
+The first visible effect: claim creation flows take less time to complete.
 
 ## Learnings
 
 In a multi-role product, redesigning module by module is faster at first, but it multiplies inconsistencies. Investing first in a shared structure and system is what made it possible to deliver, in three weeks, something development can maintain.
 
 Writing the conclusion next to the chart turned out to matter as much as the chart itself, especially for the profiles who don't live inside the numbers.
+
+An AI assistant is only useful if it rests on data from the real modules: designing it after the shared system made it consistent with the rest of the product.
