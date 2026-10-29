@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Feature, Module, Modules } from "@/components/work/case-sections";
-import { ThemeGallery } from "@/components/work/ThemeGallery";
 import type {
   AnchorHTMLAttributes,
   ComponentType,
@@ -81,11 +79,4 @@ export const caseMdxComponents: Record<
   // <Figure src alt /> en el MDX: imagen a todo el ancho sin quedar dentro de un <p>
   Figure: CaseImg as ComponentType<Props & Record<string, unknown>>,
   a: CaseLink,
-  // Casos largos: módulos con captura, sección destacada y galería claro/oscuro
-  Modules: Modules as ComponentType<Props & Record<string, unknown>>,
-  Module: Module as unknown as ComponentType<Props & Record<string, unknown>>,
-  Feature: Feature as ComponentType<Props & Record<string, unknown>>,
-  ThemeGallery: ThemeGallery as unknown as ComponentType<
-    Props & Record<string, unknown>
-  >,
 };

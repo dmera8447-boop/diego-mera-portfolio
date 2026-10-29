@@ -133,22 +133,7 @@
   .case-body > figure {
     margin-top: 64px;
   }
-  .case-body > h3 {
-    margin-top: 48px;
-  }
-  .case-body > .case-wide {
-    margin-top: 64px;
-  }
-  /* Sección destacada: sale del margen y ocupa todo el ancho de la ventana */
-  .case-body > .case-bleed {
-    grid-column: 1 / -1;
-    margin-top: var(--section);
-    margin-inline: calc(var(--edge) * -1);
-  }
   @media (min-width: 768px) {
-    .case-body > .case-wide {
-      grid-column: 1 / -1;
-    }
     .case-body {
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }

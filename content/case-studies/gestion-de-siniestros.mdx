@@ -48,66 +48,22 @@ El sistema de diseño compartido hizo posible diseñar después a Mr. I sin part
 
 Tres módulos, tres públicos y una misma base: la misma navegación, los mismos componentes y la misma forma de leer los datos.
 
-<Modules>
-<Module title="Siniestros" audience="Aseguradora" src="/case-studies/gestion-de-siniestros/laptop-siniestros.png" alt="Módulo de siniestros en laptop: indicadores, dona con la distribución por estado y lectura en lenguaje natural">
+- **Siniestros (aseguradora):** el análisis se organiza en pestañas (estados, subcategorías y tendencias). Una dona resume la distribución por estado y, debajo, una línea en lenguaje natural interpreta los números.
+- **Venta en piso (oficinas y agentes):** estadísticas de ventas, ranking de oficinas y órdenes. Incluye el flujo de venta a un cliente nuevo: registro por pasos, pago, firma y validación.
+- **Ventas web (portal del cliente):** un dashboard con pólizas y siniestros, el detalle de cada póliza, el reporte de un siniestro nuevo por pasos y su seguimiento, sin tener que llamar.
 
-El análisis se organiza en pestañas (estados, subcategorías y tendencias) para que la vista principal no se sature.
-
-Una dona resume la distribución por estado y, debajo, una línea en lenguaje natural interpreta los números para quien no vive dentro de ellos.
-
-</Module>
-<Module title="Venta en piso" audience="Oficinas y agentes" src="/case-studies/gestion-de-siniestros/laptop-venta-en-piso.png" alt="Módulo de venta en piso en laptop: estadísticas de ventas, ventas por día y ventas por producto">
-
-Estadísticas de ventas, ranking de oficinas y órdenes en un mismo lugar.
-
-Diseñé también el flujo de venta a un cliente nuevo: registro por pasos, pago, firma y validación.
-
-</Module>
-<Module title="Ventas web" audience="Portal del cliente" src="/case-studies/gestion-de-siniestros/laptop-ventas-web.png" alt="Portal del cliente en laptop: dashboard de pólizas y siniestros">
-
-Un dashboard con las pólizas y los siniestros del cliente, y el detalle de cada póliza.
-
-Reportar un siniestro nuevo se hace por pasos, y después el cliente sigue su avance sin tener que llamar.
-
-</Module>
-</Modules>
-
-<Feature>
-
-## Mr. I, la capa de inteligencia
+## Mr. I
 
 Mr. I es un asistente de IA para aseguradoras. Se conecta con los módulos a través de sus estadísticas y está pensado para la gerencia, que necesita respuestas, no pantallas.
 
-### Chat primero
-
-La decisión de diseño central fue empezar por el chat. Cada respuesta llega con datos visuales (indicadores, gráficos, hallazgos y acciones), no solo con texto.
-
-### Lo que diseñé
+La decisión central fue empezar por el chat. Cada respuesta llega con datos visuales (indicadores, gráficos, hallazgos y acciones), no solo con texto.
 
 - **Chat con respuestas visuales:** un resumen ejecutivo de los cuatro módulos, con recomendaciones.
-- **Dashboard gerencial a pantalla completa:** filtros solo de período y módulo, y los datos clave de Siniestros, Venta en piso, Ventas web y Optimización. Por ejemplo, el tiempo promedio de resolución de un siniestro frente a una meta de 7 días y los casos fuera de meta.
-- **Estado "pensando":** una lista de pasos con casillas que muestra qué está haciendo la IA antes de responder.
-- **Estados vacíos y temas:** nuevo chat, dashboard sin datos, y modo claro y oscuro.
-- **Responsive:** desktop a 1440 y móvil a 393.
+- **Dashboard gerencial:** a pantalla completa, con filtros solo de período y módulo y los datos clave de Siniestros, Venta en piso, Ventas web y Optimización. Por ejemplo, el tiempo promedio de resolución de un siniestro frente a una meta de 7 días.
+- **Estado "pensando":** una lista de pasos que muestra qué está haciendo la IA antes de responder.
+- **Estados vacíos, modo claro y oscuro, y versión móvil.**
 
-### Refinamiento
-
-Quité el logo de Luntriqa para dejar solo la marca Mr. I, y eliminé íconos, pastillas y tarjetas repetidas para que el producto se viera más sobrio y legible.
-
-También quité las preguntas sugeridas, para dejar un chat limpio.
-
-<ThemeGallery
-  base="/case-studies/gestion-de-siniestros"
-  label="Tema de las pantallas de Mr. I"
-  lightLabel="Claro"
-  darkLabel="Oscuro"
-  screens="inicio:Inicio, chat:Chat, pensando:Pensando, dashboard:Dashboard"
-  wide="laptop-dashboard-gerencial"
-  wideAlt="Dashboard gerencial de Mr. I en laptop"
-  note="Las pantallas usan datos ficticios."
-/>
-
-</Feature>
+En el refinamiento quité el logo de Luntriqa para dejar solo la marca Mr. I, y eliminé íconos, pastillas, tarjetas repetidas y preguntas sugeridas para que el producto se viera más sobrio y legible.
 
 ## Solución
 
