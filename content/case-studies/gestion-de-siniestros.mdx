@@ -1,9 +1,9 @@
 ---
-title: "Dashboard de gestión de siniestros"
-role: "Diseñador UX/UI"
-duration: "[Duración — pendiente de definir]"
-team: "[Equipo — pendiente de definir]"
-year: "2025"
+title: "Rediseño de la gestión de siniestros"
+role: "Diseñador UX/UI · flujos, interfaz y sistema de diseño"
+duration: "3 semanas"
+team: "PM y equipo de desarrollo"
+year: "2026"
 tags: ["Dashboard", "Insurtech", "Multirol"]
 liveUrl: ""
 shortTitle: "Gestión de siniestros"
@@ -13,41 +13,47 @@ coverReady: true
 order: 1
 company: "Luntriqa · Insurtech"
 kind: "Luntriqa · Dashboard de siniestros"
-description: "Un dashboard que responde en una sola vista cuántos siniestros hay, cuánto tardan en cerrarse, si se cumple el SLA y cuánto falta por liquidar."
+description: "Rediseño completo de los módulos de gestión de Luntriqa: una sola estructura y un solo sistema de diseño para aseguradoras, brokers y clientes."
 ---
 
 ## Contexto
 
-Luntriqa construye tecnología a la medida para aseguradoras y brokers de Latinoamérica. Uno de sus productos es la plataforma donde se reportan, revisan y liquidan los siniestros de sus clientes corporativos.
+Luntriqa es el producto de Shepwashi para aseguradoras y brokers de Latinoamérica. Ahí se reportan, revisan y liquidan los siniestros, y se gestionan pólizas, emisiones y comisiones.
 
-Ahí trabajan perfiles distintos, como analistas, supervisores y administradores de cada corporación, y cada uno necesita ver la misma información con un nivel de detalle diferente.
+La plataforma ya existía. En 2026 me tocó el rediseño completo de sus módulos de gestión, en tres semanas, junto al PM y al equipo de desarrollo. Los flujos, la interfaz y el sistema de diseño fueron míos.
 
 ## Reto
 
-Un siniestro pasa por varios estados antes de cerrarse, y la información para saber cómo va la operación estaba repartida en listados y reportes.
+El sistema funcionaba, pero costaba usarlo. Los flujos eran difíciles de seguir, la información estaba mal organizada y el producto no tenía un sistema de diseño claro.
 
-El reto era responder en una sola vista las preguntas de todos los días: cuántos siniestros hay, cuánto tardan en cerrarse, si se cumple el SLA comprometido con el cliente y cuánto dinero sigue pendiente de liquidar.
+Además, tres roles usan la misma plataforma con necesidades distintas:
+
+- **Aseguradora:** gestiona estados, subcategorías y tendencias de siniestros.
+- **Broker:** sigue su cartera de clientes, emisiones y comisiones.
+- **Cliente:** consulta sus pólizas y da seguimiento a sus siniestros.
 
 ## Enfoque
 
-Partí de esas cuatro preguntas y las convertí en la primera fila del dashboard: total de siniestros, tiempo promedio de apertura a cierre, cumplimiento de SLA contra su objetivo y monto pendiente.
+Al ser un producto interno, las necesidades y los problemas de los usuarios me llegaron directo del PM y de los developers, que conocen el día a día de cada rol.
 
-Todo lo demás depende de dos filtros que se mantienen arriba, tipo de siniestro y período, para que cualquier rol pueda acotar la vista sin salir de la pantalla.
+La decisión que más costó defender fue unificar los tres roles en una sola estructura de navegación y un solo sistema de diseño, en vez de rediseñar cada módulo por separado. Tomaba más tiempo al inicio, pero hacía el producto más consistente y más fácil de mantener para desarrollo.
 
-- Un solo dashboard que se adapta al rol, en lugar de una pantalla distinta para cada perfil.
-- El cumplimiento de SLA se muestra junto a su meta y a lo que falta para alcanzarla, no como un porcentaje suelto.
-- La navegación lateral se reduce a lo esencial: dashboard, usuarios y corporaciones.
+- Una sola navegación que se adapta al rol, en lugar de una pantalla distinta para cada perfil.
+- Componentes compartidos entre módulos, para que desarrollo construya una vez y reutilice.
+- La primera fila del dashboard responde las preguntas de todos los días: total de siniestros, tiempo promedio de apertura a cierre, cumplimiento de SLA contra su meta y monto pendiente.
 
 ## Solución
 
-El análisis se organiza en pestañas (estados, subcategorías y tendencias), de modo que la vista principal no se satura.
+El análisis se organiza en pestañas (estados, subcategorías y tendencias), de modo que la vista principal no se satura. Dos filtros fijos arriba, tipo de siniestro y período, acotan todo sin salir de la pantalla.
 
-En la pestaña de estados, una dona resume la distribución de los siniestros y, al lado, el detalle por estado muestra la cantidad y su participación sobre el total.
+En la pestaña de estados, una dona resume la distribución y, al lado, el detalle muestra la cantidad por estado y su participación sobre el total. Debajo, una línea en lenguaje natural interpreta los números, por ejemplo: "Más de la mitad de los siniestros sigue pendiente de revisión".
 
-Debajo, una línea en lenguaje natural interpreta los números, por ejemplo: "Más de la mitad de los siniestros sigue pendiente de revisión". Así, quien entra no tiene que sacar la conclusión por su cuenta.
+Como extra, diseñé Mr. I, un asistente de IA con un dashboard estadístico pensado para la gerencia.
+
+El rediseño se entregó como parte de Luntriqa y se está implementando de forma gradual con el equipo de desarrollo. El primer efecto visible: los flujos de creación de siniestros se completan en menos tiempo.
 
 ## Aprendizajes
 
-En un dashboard operativo, lo más valioso no es mostrar más datos, sino ordenar las preguntas que la gente ya se hace.
+En un producto multirol, rediseñar módulo por módulo es más rápido al principio, pero multiplica las inconsistencias. Invertir primero en una estructura y un sistema compartidos fue lo que hizo posible entregar en tres semanas algo que desarrollo puede mantener.
 
 Escribir la conclusión junto al gráfico resultó tan importante como el gráfico mismo, sobre todo para los perfiles que no viven dentro de los números.

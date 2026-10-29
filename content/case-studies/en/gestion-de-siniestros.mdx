@@ -1,45 +1,53 @@
 ---
 shortTitle: "Claims management"
-role: "UX/UI Designer"
+role: "UX/UI Designer · flows, interface and design system"
+duration: "3 weeks"
+team: "PM and development team"
 platform: ""
 company: "Luntriqa · Insurtech"
 kind: "Luntriqa · Claims dashboard"
-title: "Claims management dashboard"
-description: "A dashboard that answers in one view how many claims there are, how long they take to close, whether the SLA is met and how much is left to pay out."
+title: "Claims management redesign"
+description: "A full redesign of Luntriqa's management modules: one structure and one design system for insurers, brokers and clients."
 ---
 
 ## Context
 
-Luntriqa builds tailored technology for insurers and brokers across Latin America. One of its products is the platform where its corporate clients report, review and settle claims.
+Luntriqa is Shepwashi's product for insurers and brokers across Latin America. It's where claims are reported, reviewed and settled, and where policies, issuances and commissions are managed.
 
-Different profiles work there, such as analysts, supervisors and the administrators of each corporation, and each one needs the same information at a different level of detail.
+The platform already existed. In 2026 I led the full redesign of its management modules, in three weeks, alongside the PM and the development team. The flows, the interface and the design system were mine.
 
 ## Challenge
 
-A claim goes through several states before it closes, and the information needed to see how operations were going was spread across lists and reports.
+The system worked, but it was hard to use. The flows were hard to follow, the information was poorly organised and the product had no clear design system.
 
-The challenge was to answer the everyday questions in a single view: how many claims there are, how long they take to close, whether the SLA promised to the client is being met, and how much money is still waiting to be paid out.
+On top of that, three roles share the same platform with different needs:
+
+- **Insurer:** manages claim states, subcategories and trends.
+- **Broker:** follows their client portfolio, issuances and commissions.
+- **Client:** checks their policies and tracks their claims.
 
 ## Approach
 
-I started from those four questions and turned them into the dashboard's first row: total claims, average time from opening to close, SLA compliance against its target, and the amount pending.
+Since it was an internal product, users' needs and pain points came to me straight from the PM and the developers, who know each role's day-to-day.
 
-Everything else depends on two filters kept at the top, claim type and period, so any role can narrow the view without leaving the screen.
+The decision that took the most defending was unifying the three roles under one navigation structure and one design system, instead of redesigning each module separately. It took longer at first, but it made the product more consistent and easier for development to maintain.
 
-- One dashboard that adapts to the role, instead of a separate screen for each profile.
-- SLA compliance is shown next to its target and the gap still to close, not as a lone percentage.
-- The side navigation is cut down to the essentials: dashboard, users and corporations.
+- One navigation that adapts to the role, instead of a separate screen for each profile.
+- Components shared across modules, so development builds once and reuses.
+- The dashboard's first row answers the everyday questions: total claims, average time from opening to close, SLA compliance against its target, and the amount pending.
 
 ## Solution
 
-The analysis is organised in tabs (states, subcategories and trends), so the main view never gets crowded.
+The analysis is organised in tabs (states, subcategories and trends), so the main view never gets crowded. Two filters fixed at the top, claim type and period, narrow everything without leaving the screen.
 
-In the states tab, a donut chart sums up how claims are distributed and, next to it, the breakdown by state shows each count and its share of the total.
+In the states tab, a donut chart sums up the distribution and, next to it, the breakdown shows each state's count and share of the total. Below, a plain-language line reads the numbers, for example: "More than half of the claims are still pending review".
 
-Below, a plain-language line reads the numbers, for example: "More than half of the claims are still pending review". That way, whoever opens the dashboard doesn't have to work out the conclusion alone.
+As an extra, I designed Mr. I, an AI assistant with a statistics dashboard built for management.
+
+The redesign shipped as part of Luntriqa and is being rolled out gradually with the development team. The first visible effect: claim creation flows take less time to complete.
 
 ## Learnings
 
-In an operational dashboard, the most valuable thing is not showing more data but putting in order the questions people already ask.
+In a multi-role product, redesigning module by module is faster at first, but it multiplies inconsistencies. Investing first in a shared structure and system is what made it possible to deliver, in three weeks, something development can maintain.
 
 Writing the conclusion next to the chart turned out to matter as much as the chart itself, especially for the profiles who don't live inside the numbers.
