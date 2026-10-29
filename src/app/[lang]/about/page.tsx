@@ -157,14 +157,35 @@ export default async function AboutPage({ params }: { params: Params }) {
           <h2 id="certs-title" className="type-h2 reveal">
             {a.certs.title}
           </h2>
-          <ul className="mt-8 grid gap-3 md:mt-12 md:grid-cols-3">
+          <a
+            href={a.certs.featured.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reveal bg-ink text-on-ink group mt-8 flex flex-col gap-6 p-5 md:mt-12 md:min-h-[260px] md:flex-row md:items-end md:justify-between md:p-7"
+            style={step(1)}
+          >
+            <div className="flex flex-col gap-3">
+              <span className="text-on-ink-soft">{a.certs.featured.meta}</span>
+              <span className="type-h2">{a.certs.featured.name}</span>
+              <p className="text-on-ink-soft max-w-[560px]">
+                {a.certs.featured.desc}
+              </p>
+            </div>
+            <span className="shrink-0 font-medium underline underline-offset-[5px] group-hover:decoration-2">
+              {a.certs.featured.cta} ↗
+            </span>
+          </a>
+          <h3 className="type-title reveal mt-12 font-medium" style={step(2)}>
+            {a.certs.coursesLabel}
+          </h3>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
             {a.certs.items.map((c, i) => (
               <li
                 key={c}
-                className="reveal bg-tone flex min-h-[140px] items-end p-5 md:min-h-[220px] md:p-7"
-                style={step(i + 1)}
+                className="reveal bg-tone flex min-h-[120px] items-end p-5 md:min-h-[180px]"
+                style={step(i + 3)}
               >
-                <p className="type-title font-medium">{c}</p>
+                <p className="font-medium">{c}</p>
               </li>
             ))}
           </ul>
