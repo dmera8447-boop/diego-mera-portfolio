@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T16:59:30+00:00",
+  "title": "Design System: Diego Mera Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#404040",
+          "#808080",
+          "#bfbfbf",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#0b0b0b",
+        "tonalRamp": [
+          "#030303",
+          "#060606",
+          "#080808",
+          "#0b0b0b",
+          "#484848",
+          "#858585",
+          "#c2c2c2",
+          "#e7e7e7"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Tinta segunda",
+        "canonical": "#3a3a38",
+        "tonalRamp": [
+          "#0e0e0e",
+          "#1d1d1c",
+          "#2c2c2a",
+          "#3a3a38",
+          "#6b6b6a",
+          "#9c9c9c",
+          "#cececd",
+          "#ebebeb"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Gris lectura",
+        "canonical": "#6b6b68",
+        "tonalRamp": [
+          "#1b1b1a",
+          "#363634",
+          "#50504e",
+          "#6b6b68",
+          "#90908e",
+          "#b5b5b4",
+          "#dadad9",
+          "#f0f0f0"
+        ]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Gris tenue",
+        "canonical": "#b4b4b0",
+        "tonalRamp": [
+          "#2d2d2c",
+          "#5a5a58",
+          "#878784",
+          "#b4b4b0",
+          "#c7c7c4",
+          "#dadad8",
+          "#ececeb",
+          "#f8f8f7"
+        ]
+      },
+      "tone": {
+        "role": "neutral",
+        "displayName": "Tono",
+        "canonical": "#f1f1ef",
+        "tonalRamp": [
+          "#3c3c3c",
+          "#787878",
+          "#b5b5b3",
+          "#f1f1ef",
+          "#f4f4f3",
+          "#f8f8f7",
+          "#fcfcfb",
+          "#fefefd"
+        ]
+      },
+      "tone-2": {
+        "role": "neutral",
+        "displayName": "Tono segundo",
+        "canonical": "#e4e4e1",
+        "tonalRamp": [
+          "#393938",
+          "#727270",
+          "#ababa9",
+          "#e4e4e1",
+          "#ebebe8",
+          "#f2f2f0",
+          "#f8f8f8",
+          "#fcfcfc"
+        ]
+      },
+      "signal-orange": {
+        "role": "primary",
+        "displayName": "Naranja señal",
+        "canonical": "#ff4d00",
+        "tonalRamp": [
+          "#401300",
+          "#802600",
+          "#bf3a00",
+          "#ff4d00",
+          "#ff7a40",
+          "#ffa680",
+          "#ffd2bf",
+          "#ffede6"
+        ]
+      },
+      "on-ink": {
+        "role": "neutral",
+        "displayName": "Sobre tinta",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#404040",
+          "#808080",
+          "#bfbfbf",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "on-ink-soft": {
+        "role": "neutral",
+        "displayName": "Sobre tinta suave",
+        "canonical": "#a9a9a5",
+        "tonalRamp": [
+          "#2a2a29",
+          "#545452",
+          "#7f7f7c",
+          "#a9a9a5",
+          "#bebebc",
+          "#d4d4d2",
+          "#eaeae8",
+          "#f6f6f6"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Error",
+        "canonical": "#b3261e",
+        "tonalRamp": [
+          "#2d0a08",
+          "#5a130f",
+          "#861c16",
+          "#b3261e",
+          "#c65c56",
+          "#d9928e",
+          "#ecc9c7",
+          "#f7e9e8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Nombre",
+        "purpose": "El nombre a todo el ancho en hero y footer."
+      },
+      "headline": {
+        "displayName": "H1",
+        "purpose": "h1 de páginas internas y casos."
+      },
+      "headline-section": {
+        "displayName": "H2",
+        "purpose": "Títulos de sección y menú móvil."
+      },
+      "lead": {
+        "displayName": "Enunciado",
+        "purpose": "Enunciados, nombres de casos, primer párrafo de cada sección de un caso."
+      },
+      "title": {
+        "displayName": "Subtítulo",
+        "purpose": "Subtítulos y nombres de etapas."
+      },
+      "body": {
+        "displayName": "Cuerpo",
+        "purpose": "Texto corrido, máximo 38rem."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Curva de todas las entradas."
+      },
+      {
+        "name": "name-rise",
+        "value": "translateY(105%) → 0, 800ms ease-out",
+        "purpose": "Firma: el nombre sube desde su línea base al cargar."
+      },
+      {
+        "name": "fade-up",
+        "value": "opacity 0→1, translateY(20px)→0, 600ms ease-out",
+        "purpose": "Entrada de elementos del hero."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0→1, translateY(24px)→0, 700ms ease-out, +80ms por índice",
+        "purpose": "Entradas al hacer scroll."
+      },
+      {
+        "name": "clip-reveal",
+        "value": "clip-path inset(0 100% 0 0)→inset(0), 900ms ease-out, +110ms por índice",
+        "purpose": "Barra de proceso de izquierda a derecha."
+      },
+      {
+        "name": "state",
+        "value": "150ms",
+        "purpose": "Cambios de color en hover y foco."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "768px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario (Agendar)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "La única acción en naranja señal: agendar la llamada.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Agendar llamada</a>",
+      "css": ".ds-btn-primary { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 24px; background:#ff4d00; color:#0b0b0b; font-weight:500; font-size:16px; text-decoration:none; border-radius:0; transition: background-color 150ms, color 150ms, transform 150ms; } .ds-btn-primary:hover { background:#0b0b0b; color:#fff; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline:2px solid #0b0b0b; outline-offset:3px; }"
+    },
+    {
+      "name": "Botón tinta",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Acción secundaria sólida (WhatsApp, email).",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Escribir por WhatsApp</a>",
+      "css": ".ds-btn-ink { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 24px; background:#0b0b0b; color:#fff; font-weight:500; font-size:16px; text-decoration:none; border-radius:0; transition: background-color 150ms, transform 150ms; } .ds-btn-ink:hover { background:#3a3a38; } .ds-btn-ink:active { transform: translateY(1px); } .ds-btn-ink:focus-visible { outline:2px solid #0b0b0b; outline-offset:3px; }"
+    },
+    {
+      "name": "Enlace subrayado",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Acción terciaria como texto subrayado que engrosa en hover.",
+      "html": "<a class=\"ds-btn-link\" href=\"#\">Ver todos los casos</a>",
+      "css": ".ds-btn-link { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; min-height:44px; color:#0b0b0b; font-weight:500; font-size:16px; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; transition: text-decoration-thickness 150ms; } .ds-btn-link:hover { text-decoration-thickness:2px; } .ds-btn-link:focus-visible { outline:2px solid #0b0b0b; outline-offset:3px; }"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo del formulario de contacto: tono sin borde, contorno de tinta al enfocar.",
+      "html": "<label class=\"ds-field\"><span>Nombre</span><input class=\"ds-input\" placeholder=\"Tu nombre\" /></label>",
+      "css": ".ds-field { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:flex; flex-direction:column; gap:8px; color:#0b0b0b; font-size:16px; } .ds-input { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; width:100%; padding:14px 16px; background:#f1f1ef; color:#0b0b0b; border:0; border-radius:0; font-size:16px; outline:none; transition: background-color 150ms; } .ds-input::placeholder { color:#6b6b68; } .ds-input:hover { background:#e4e4e1; } .ds-input:focus { outline:2px solid #0b0b0b; outline-offset:-2px; }"
+    },
+    {
+      "name": "Chip de selección",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Radios con forma de chip para el tipo de consulta.",
+      "html": "<div class=\"ds-chips\"><span class=\"ds-chip ds-chip-on\">Full-time</span><span class=\"ds-chip\" tabindex=\"0\">Freelance</span><span class=\"ds-chip\" tabindex=\"0\">Otro</span></div>",
+      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:8px; } .ds-chip { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; min-height:44px; padding:0 16px; background:#f1f1ef; color:#0b0b0b; font-weight:500; font-size:16px; cursor:pointer; transition: background-color 150ms, color 150ms; } .ds-chip:hover { background:#e4e4e1; } .ds-chip:focus-visible { outline:2px solid #0b0b0b; outline-offset:2px; } .ds-chip-on, .ds-chip-on:hover { background:#0b0b0b; color:#fff; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Barra fija en papel: logo y nombre, enlaces subrayados en hover, agendar a la derecha.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\"><span class=\"ds-nav-mark\">DM</span>Diego Mera</a><nav><a class=\"ds-nav-link ds-nav-current\" href=\"#\">Trabajo</a><a class=\"ds-nav-link\" href=\"#\">Sobre mí</a><a class=\"ds-nav-link\" href=\"#\">Contacto</a></nav><a class=\"ds-nav-cta\" href=\"#\">Agendar llamada</a></header>",
+      "css": ".ds-nav { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:flex; align-items:center; justify-content:space-between; gap:24px; height:76px; padding:0 32px; background:#fff; color:#0b0b0b; font-size:16px; } .ds-nav nav { display:flex; gap:32px; } .ds-nav-brand { display:flex; align-items:center; gap:10px; font-weight:500; color:#0b0b0b; text-decoration:none; } .ds-nav-mark { display:inline-grid; place-items:center; width:32px; height:32px; background:#0b0b0b; color:#fff; font-size:12px; font-weight:500; } .ds-nav-link { display:inline-flex; align-items:center; min-height:44px; color:#0b0b0b; text-decoration:none; text-underline-offset:5px; } .ds-nav-link:hover { text-decoration:underline; } .ds-nav-current { font-weight:500; text-decoration:underline; } .ds-nav-cta { display:inline-flex; align-items:center; min-height:48px; padding:12px 24px; background:#ff4d00; color:#0b0b0b; font-weight:500; text-decoration:none; transition: background-color 150ms, color 150ms; } .ds-nav-cta:hover { background:#0b0b0b; color:#fff; } .ds-nav a:focus-visible { outline:2px solid #0b0b0b; outline-offset:3px; }"
+    },
+    {
+      "name": "Lista de trabajo",
+      "kind": "custom",
+      "refersTo": "work-ledger",
+      "description": "Casos como filas de texto; al pasar el cursor las demás se atenúan.",
+      "html": "<ul class=\"ds-ledger\"><li><a href=\"#\"><span class=\"ds-ledger-name\">Gestión de siniestros</span><span>Luntriqa · Dashboard de siniestros</span><span class=\"ds-ledger-year\">2026</span></a></li><li><a href=\"#\"><span class=\"ds-ledger-name\">Operación acuícola</span><span>Labreicis · Plataforma desktop + iPad</span><span class=\"ds-ledger-year\">2025</span></a></li><li><a href=\"#\"><span class=\"ds-ledger-name\">Luntriqa</span><span>Luntriqa · Sitio web</span><span class=\"ds-ledger-year\">2025</span></a></li></ul>",
+      "css": ".ds-ledger { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; list-style:none; margin:0; padding:0; color:#0b0b0b; font-size:16px; } .ds-ledger a { display:grid; grid-template-columns:1fr 220px 64px; align-items:baseline; gap:24px; padding:20px 0; color:inherit; text-decoration:none; transition: color 150ms; } .ds-ledger-name { font-size:28px; line-height:1.18; letter-spacing:-0.015em; font-weight:500; } .ds-ledger-year { text-align:right; font-variant-numeric:tabular-nums; } .ds-ledger:hover a { color:#6b6b68; } .ds-ledger a:hover { color:#0b0b0b; } .ds-ledger a:focus-visible { outline:2px solid #0b0b0b; outline-offset:3px; }"
+    },
+    {
+      "name": "Barra de proceso",
+      "kind": "custom",
+      "refersTo": "process-bar",
+      "description": "Cinco bloques de tinta a tono; la tercera etapa es la única excepción permitida del naranja.",
+      "html": "<ol class=\"ds-process\"><li class=\"s1\">Entender</li><li class=\"s2\">Estructurar</li><li class=\"s3\">Diseñar</li><li class=\"s4\">Validar</li><li class=\"s5\">Entregar</li></ol>",
+      "css": ".ds-process { font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; display:flex; gap:6px; list-style:none; margin:0; padding:0; font-size:20px; font-weight:500; } .ds-process li { flex:1; height:160px; padding:20px; display:flex; align-items:flex-end; } .ds-process .s1 { background:#0b0b0b; color:#fff; } .ds-process .s2 { background:#3a3a38; color:#fff; } .ds-process .s3 { background:#ff4d00; color:#0b0b0b; } .ds-process .s4 { background:#e4e4e1; color:#0b0b0b; } .ds-process .s5 { background:#f1f1ef; color:#0b0b0b; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La firma en grande",
+    "overview": "**Creative North Star: \"La firma en grande\"**\n\nEl nombre es la portada. \"Diego Mera\" ocupa todo el ancho del contenedor en el hero y vuelve a cerrar la página en el footer, como una firma al pie de un documento. Todo lo demás es blanco, negro y silencio: una sola familia tipográfica, superficies separadas por un paso de tono, esquinas rectas y ningún adorno que compita con el trabajo.\n\nEn ese silencio hay una sola voz de color: un naranja señal que aparece donde hay que actuar (agendar la llamada). La densidad es baja y el ritmo generoso: secciones separadas por 96px en móvil y 160px en desktop, titulares de dos líneas como máximo y texto de lectura a 16px con interlineado amplio. La jerarquía se construye con tamaño y peso, nunca con cajas, líneas o sombras.\n\nEl movimiento es sobrio y tiene una firma: el nombre sube desde detrás de su propia línea base al cargar. El resto de entradas son desplazamientos cortos con una curva de salida fuerte, y todo es visible sin JavaScript o con movimiento reducido.",
+    "keyCharacteristics": [
+      "El nombre a todo el ancho como identidad (hero y footer).",
+      "Blanco y negro con un único acento naranja para la acción.",
+      "Una sola familia (Host Grotesk 400/500), tracking negativo en tamaños grandes.",
+      "Plano: profundidad por tono, sin sombras ni bordes.",
+      "Esquinas rectas en todo.",
+      "Movimiento CSS breve, con la subida del nombre como firma."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "El naranja señal solo aparece en la acción de agendar (botón primario, envío del formulario, barra móvil). Única excepción documentada: la tercera etapa de la barra de \"Proceso\" de la home. Fuera de eso, cualquier naranja es un error.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-On-Signal Rule",
+        "body": "Sobre naranja el texto es siempre tinta, nunca blanco.",
+        "section": "colors"
+      },
+      {
+        "name": "The Five Sizes Rule",
+        "body": "Cada página usa como máximo estos cinco tamaños más el cuerpo. No se crean tamaños intermedios.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Lines Rule",
+        "body": "Ningún titular pasa de dos líneas; los h1–h3 usan `text-wrap: balance`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tone-Not-Line Rule",
+        "body": "Las superficies se separan con un paso de tono, nunca con bordes, líneas divisorias ni sombras.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reservar el naranja señal para agendar, con texto en tinta encima.",
+      "**Do** separar superficies con `tone` (#f1f1ef) y `tone-2` (#e4e4e1) en lugar de bordes.",
+      "**Do** usar solo Host Grotesk en 400 y 500, con los cinco tamaños de la escala.",
+      "**Do** mantener esquinas rectas en todo elemento.",
+      "**Do** respetar los objetivos táctiles de 44px o más y el foco visible de tinta (2px, separación 3px).",
+      "**Do** usar entradas cortas con `cubic-bezier(0.22, 1, 0.36, 1)` y dejar todo visible sin JavaScript o con movimiento reducido."
+    ],
+    "donts": [
+      "**Don't** usar el naranja en fondos decorativos, iconos, enlaces o titulares (la barra de proceso es la única excepción).",
+      "**Don't** poner texto blanco sobre naranja.",
+      "**Don't** usar sombras, gradientes, bordes ni líneas divisorias.",
+      "**Don't** usar eyebrows, tipografía monoespaciada ni numeración tipo 01/02.",
+      "**Don't** escribir titulares de más de dos líneas.",
+      "**Don't** usar `faint` (#b4b4b0) para texto de lectura.",
+      "**Don't** redondear esquinas ni usar formas de pastilla."
+    ]
+  }
+}
