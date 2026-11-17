@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "portfolio-pdf/portfolio-en.paged.html"
+        ],
+        "createdAt": "2026-11-17T23:15:15.121Z",
+        "reason": "Claude: generated PDF output; tight leading is the DESIGN.md display/headline scale (0.86–1.22), body text is 1.5–1.6"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "portfolio-pdf/portfolio-en.html"
+        ],
+        "createdAt": "2026-11-17T23:15:15.136Z",
+        "reason": "Claude: generated PDF output; tight leading is the DESIGN.md display/headline scale (0.86–1.22), body text is 1.5–1.6"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "portfolio-pdf/portfolio-es.paged.html"
+        ],
+        "createdAt": "2026-11-17T23:15:15.149Z",
+        "reason": "Claude: generated PDF output; tight leading is the DESIGN.md display/headline scale (0.86–1.22), body text is 1.5–1.6"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "portfolio-pdf/portfolio-es.html"
+        ],
+        "createdAt": "2026-11-17T23:15:15.161Z",
+        "reason": "Claude: generated PDF output; tight leading is the DESIGN.md display/headline scale (0.86–1.22), body text is 1.5–1.6"
+      }
+    ]
+  }
+}

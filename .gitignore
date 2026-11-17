@@ -51,3 +51,6 @@ next-env.d.ts
 
 # Capturas del inspector de diseño (local)
 .taste-skill/
+
+# portafolio en PDF (generado)
+/portfolio-pdf/

@@ -1,0 +1,578 @@
+/* Portafolio en PDF: los tokens de DESIGN.md llevados a una página 16:9 de 1280×720 */
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+
+:root {
+  --paper: #ffffff;
+  --ink: #0b0b0b;
+  --ink-2: #3a3a38;
+  --soft: #6b6b68;
+  --tone: #f1f1ef;
+  --tone-2: #e4e4e1;
+  --signal: #ff4d00;
+  --on-ink: #ffffff;
+  --on-ink-soft: #a9a9a5;
+  --edge: 48px;
+  --gap: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Host Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01";
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+strong {
+  font-weight: 500;
+}
+
+/* Página */
+.page {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  padding: 44px var(--edge) 72px;
+  break-after: page;
+  background: var(--paper);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  height: 100%;
+}
+
+.foot {
+  position: absolute;
+  right: var(--edge);
+  bottom: 28px;
+  left: var(--edge);
+  display: flex;
+  justify-content: space-between;
+  color: var(--soft);
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Escala: los cinco tamaños del sitio a la medida de la página */
+.h1 {
+  font-size: 76px;
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.lead {
+  font-size: 24px;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.title {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+.soft {
+  color: var(--soft);
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+/* El nombre a todo el ancho: la firma */
+.name-fit {
+  position: absolute;
+  right: var(--edge);
+  /* Deja entera la cola de la "g" */
+  bottom: 76px;
+  left: var(--edge);
+  container-type: inline-size;
+}
+
+.name {
+  display: block;
+  font-size: calc(100cqw * 0.2066);
+  font-weight: 500;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+/* Portada */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+.who {
+  font-weight: 500;
+}
+
+.bar .soft {
+  margin-left: auto;
+}
+
+.statement {
+  max-width: 640px;
+  margin-top: 132px;
+  font-size: 32px;
+  line-height: 1.18;
+}
+
+/* Sobre mí */
+.portrait {
+  grid-column: 1 / span 4;
+  width: 100%;
+  height: 100%;
+  max-height: 604px;
+  object-fit: cover;
+  background: var(--tone);
+}
+
+.about-text {
+  grid-column: 6 / span 7;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.about-text .lead {
+  margin: 10px 0 8px;
+}
+
+.skills {
+  margin-top: 8px;
+  color: var(--soft);
+}
+
+/* Cifras y proceso */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap);
+  margin-top: 32px;
+}
+
+.stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 16px;
+}
+
+.stat {
+  font-size: 76px;
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.process-title {
+  margin-top: 64px;
+}
+
+.process {
+  display: flex;
+  gap: 6px;
+  margin-top: 28px;
+}
+
+.process li {
+  flex-basis: 0;
+  min-width: 0;
+}
+
+.stage {
+  height: 88px;
+  padding: 16px;
+}
+
+.process p {
+  margin-top: 12px;
+  padding-right: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.s-ink {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.s-ink2 {
+  background: var(--ink-2);
+  color: var(--on-ink);
+}
+
+/* Excepción documentada del acento: la etapa más larga del proceso */
+.s-signal {
+  background: var(--signal);
+  color: var(--ink);
+}
+
+.s-tone2 {
+  background: var(--tone-2);
+}
+
+.s-tone {
+  background: var(--tone);
+}
+
+/* Índice de trabajo */
+.index-intro {
+  max-width: 560px;
+  margin-top: 16px;
+  color: var(--soft);
+}
+
+.rows {
+  margin-top: 48px;
+}
+
+.rows a {
+  display: grid;
+  grid-template-columns: 5fr 5fr 1fr 1fr;
+  align-items: baseline;
+  column-gap: var(--gap);
+  padding: 16px 0;
+}
+
+.row-name {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.row-page {
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Portada de caso */
+.case-head {
+  grid-column: 1 / span 5;
+  /* Mismo alto que la imagen 4:3 de 7 columnas: la ficha cierra donde cierra la imagen */
+  height: 511px;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-head .lead {
+  margin-top: 24px;
+  font-size: 21px;
+}
+
+.case-head dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px var(--gap);
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+dt {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+dd {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.case-hero {
+  grid-column: 6 / span 7;
+  align-self: start;
+  aspect-ratio: 4 / 3;
+  background: var(--tone);
+}
+
+.case-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto de caso: dos columnas de lectura; cada sección, título y cuerpo */
+.text .cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 64px;
+  height: 100%;
+}
+
+.text .col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sec {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sec-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sec-body > p:first-child {
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.sec.cont .sec-body > p:first-child {
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+}
+
+.sec-body ul,
+.sec-body ol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 20px;
+}
+
+.sec-body ul {
+  list-style: disc;
+}
+
+.sec-body ol {
+  list-style: decimal;
+}
+
+/* Mockups a sangre: el fondo de la página es el de la imagen */
+.figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Mockups 4:3 en pares */
+.pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+  align-items: center;
+}
+
+.pair-img {
+  aspect-ratio: 4 / 3;
+  background: var(--tone);
+}
+
+.pair-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Experiencia y certificaciones */
+.xp {
+  grid-column: 1 / span 5;
+}
+
+.xp ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.xp li {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: var(--gap);
+  align-items: baseline;
+}
+
+.xp li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.certs {
+  grid-column: 7 / span 6;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.on-ink-soft {
+  color: var(--on-ink-soft);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.cert-name {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.cert-cta {
+  margin-top: 8px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.courses li {
+  padding: 10px 12px;
+  background: var(--tone);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+/* Cierre sobre tinta */
+.close {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.close-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.close-top .h1 {
+  max-width: 760px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 28px;
+  background: var(--signal);
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.channels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap);
+  margin-top: 56px;
+}
+
+.channels dt {
+  color: var(--on-ink-soft);
+}
+
+.channels dd {
+  font-size: 15px;
+}
+
+.channels a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* En pantalla (vista previa y capturas) las páginas se apilan sin espacio */
+@media screen {
+  body {
+    width: 1280px;
+  }
+}
